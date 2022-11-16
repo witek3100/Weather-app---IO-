@@ -1,31 +1,28 @@
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
-import random
-from PyQt6.QtWidgets import *
 from location import Location
 
-class MyWidget(QtWidgets.QWidget):
-    def __init__(self):
-        super().__init__()
-
-        self.location = Location()
-
-        self.frame = QtWidgets.QFrame()
-        self.button = QtWidgets.QPushButton("Update")
-        self.text_1 = QtWidgets.QLabel(str(self.location.longitude), alignment=QtCore.Qt.AlignLeft)
-        self.text_2 = QtWidgets.QLabel(str(self.location.latitude), alignment=QtCore.Qt.AlignLeft)
-
-        self.frame.drawFrame(QtWidgets.QStylePainter(self.text_1, self.text_2))
-
-        self.layout = QtWidgets.QVBoxLayout(self)
-
-        self.button.clicked.connect(self.magic)
+def update():
+    label.setText("Updated")
 
 
-    @QtCore.Slot()
-    def magic(self):
-        self.text.setText(random.choice(self.hello))
+def retrieve():
+    print(label.text())
 
-if __name__ == "__main__":
-    app = QtWidgets.QApplication([])
+location = Location()
 
-    window = QWidget()
+app = QApplication(sys.argv)
+win = QMainWindow()
+win.setGeometry(100, 100, 700, 450)
+win.setWindowTitle("Weather")
+
+label = QtWidgets.QLabel(win)
+label.setText("lon: " + str(location.longitude) + "\nlat:" + str(location.latitude) + "\ncity: " + str(location.city))
+label.adjustSize()
+label.move(10, 10)
+
+
+
+win.show()
+sys.exit(app.exec_())
