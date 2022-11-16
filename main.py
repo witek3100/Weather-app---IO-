@@ -18,6 +18,20 @@ class Main:
         win.setWindowTitle("Weather")
 
         loc_label = QtWidgets.QLabel(win)
+        loc_label.setText("show weather for: ")
+        loc_label.adjustSize()
+        loc_label.move(150, 10)
+
+        city_search = QtWidgets.QLineEdit(win)
+        city_search.setFixedWidth(300)
+        city_search.move(150, 30)
+
+        button_search = QtWidgets.QPushButton(win)
+        button_search.setText("Search")
+        button_search.clicked.connect(self.search_city)
+        button_search.move(470, 30)
+
+        loc_label = QtWidgets.QLabel(win)
         loc_label.setText(
             "current location: " + str(self.location.longitude) + "   " + str(self.location.latitude))
         loc_label.adjustSize()
@@ -34,4 +48,6 @@ class Main:
         win.show()
         sys.exit(app.exec_())
 
+    def search_city(self):
+        pass
 Main()
