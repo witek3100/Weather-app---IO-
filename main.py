@@ -10,10 +10,12 @@ class MyWidget(QtWidgets.QWidget):
         self.location = Location()
 
         self.button = QtWidgets.QPushButton("Update")
-        self.text = QtWidgets.QLabel(str(self.location.longitude), alignment=QtCore.Qt.AlignLeft)
+        self.text_1 = QtWidgets.QLabel(str(self.location.longitude), alignment=QtCore.Qt.AlignLeft)
+        self.text_2 = QtWidgets.QLabel(str(self.location.latitude), alignment=QtCore.Qt.AlignLeft)
 
         self.layout = QtWidgets.QVBoxLayout(self)
-        self.layout.addWidget(self.text)
+        self.layout.addWidget(self.text_1)
+        self.layout.addWidget(self.text_2)
         self.layout.addWidget(self.button)
 
         self.button.clicked.connect(self.magic)

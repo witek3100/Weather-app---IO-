@@ -16,5 +16,3 @@ class Location:
 
     def show(self):
         print(self.ip, [self.latitude, self.longitude], self.city)
-
-loc = Location()
