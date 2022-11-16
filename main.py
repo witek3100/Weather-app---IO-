@@ -31,6 +31,12 @@ class Main:
         button_search.clicked.connect(self.search_city)
         button_search.move(470, 30)
 
+        update_button = QtWidgets.QPushButton(win)
+        update_button.setText("update")
+        update_button.resize(60, 20)
+        update_button.clicked.connect(self.update_location)
+        update_button.move(245, 425)
+
         loc_label = QtWidgets.QLabel(win)
         loc_label.setText(
             "current location: " + str(self.location.longitude) + "   " + str(self.location.latitude))
@@ -48,6 +54,13 @@ class Main:
         win.show()
         sys.exit(app.exec_())
 
+    def display(self):
+
+
     def search_city(self):
         pass
+
+    def update_location(self):
+        self.location = Location()
+
 Main()
