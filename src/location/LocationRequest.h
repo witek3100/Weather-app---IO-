@@ -11,7 +11,7 @@
 
 class LocationRequest {
     void getLocation();
-    void printLocation()
+    void printLocation();
 private:
 
 };
