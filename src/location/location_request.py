@@ -39,6 +39,6 @@ try:
 except Exception as e:
     print(e)
 else:
-    json_object = json.dumps(loc, indent=3)     #wrzucanie odpowiedzi do pliku json
-    with open("loc.json", "w") as outfile:
+    json_object = json.dumps(loc, indent=3)
+    with open("loc.json", "w") as outfile:          #wrzucanie odpowiedzi do pliku json
         outfile.write(json_object)
