@@ -6,6 +6,6 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 
 
-add_executable(Weather-app-IO src/location/LocationRequest.cpp src/location/LocationRequest.h main.cpp)
+add_executable(Weather-app-IO src/location/LocationRequest.cpp src/location/LocationRequest.h)
 target_link_libraries(WOLocation Qt5::Core)
 

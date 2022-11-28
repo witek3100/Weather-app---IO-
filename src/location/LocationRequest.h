@@ -14,9 +14,7 @@ public:
     char* buildRequestJSON();
     int getWifiAccessPoints();
 
-    LocationRequest(){
-        std::cout << "dfdfdf";
-    }
+    LocationRequest(){}
 
 private:
 
