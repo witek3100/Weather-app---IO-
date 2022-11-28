@@ -9,12 +9,11 @@ class LocationRequest {
 
 public:
 
+    LocationRequest(){}
     void getLocation();
     void printLocation();
     char* buildRequestJSON();
     int getWifiAccessPoints();
-
-    LocationRequest(){}
 
 private:
 
