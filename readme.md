@@ -14,6 +14,9 @@
    │      └── loc.json                # plik json przechowujący informacje o lokalizacji użytkownika   
    ├── weather-api                  # łączenie i pobieranie informacji z open meteo api
 </pre>
+
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+
  ### Struktura aplikacji 
  
  Aplikacja określa lokalizacje poprzez zewnętrzne api, następnie dla tej lub podanej przez użytkownika miejscowości z pomocą kolejnego api pobiera informacje pogodowe, które zostają odpowiednio przetworzone i wyświetlone w oknie aplikacji
