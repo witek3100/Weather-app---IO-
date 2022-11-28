@@ -20,7 +20,6 @@ try:
 except:
     print("Unable to retrive wifi access points...")
 else:
-
     wifi_list = []                          #lista dostępnych punktów wifi
     for i in range(len(mac_addresses)):                     # pętla for uzupełnia wifi_list wartościami pobranymi przez komendę netsh (linia 13)
         wifi_list.append({'macAddress' : mac_addresses[i],
