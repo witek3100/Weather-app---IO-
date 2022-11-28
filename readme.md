@@ -8,10 +8,10 @@
   
 ============================================================================================================
 
-├ src     #folder źródłowy
-   └── location     
-          ├── location_request.py   # łączenie z google geolocation api -> zapisywanie odpowiedzi do loc.json
-          └── loc.json              # plik json przechowujący informacje o lokalizacji użytkownika 
+├ src     #folder źródłowy  
+   └── location       
+          ├── location_request.py   # łączenie z google geolocation api -> zapisywanie odpowiedzi do loc.json  
+          └── loc.json              # plik json przechowujący informacje o lokalizacji użytkownika   
           
 
  ### Struktura aplikacji 
