@@ -3,8 +3,9 @@ import requests
 import re
 import subprocess
 
-api_url = "https://www.googleapis.com/geolocation/v1/geolocate?key="
-api_key = "AIzaSyB1PUPXMdxyKLi3EdVufBQqWXbd-oIBxjs"
+api_url = "https://www.googleapis.com/geolocation/v1/geolocate?key="    #adres url do google geolocation api
+api_key = "AIzaSyB1PUPXMdxyKLi3EdVufBQqWXbd-oIBxjs"                     #klucz api  (konto wnowogorski10@gmail.com)
+complete_api_url = api_url + api_key
 
 request = {'considerIp' : 'true'}
 
@@ -29,7 +30,7 @@ else:
 
 
 try:
-    response = requests.post(api_url+api_key, json=request)
+    response = requests.post(complete_api_url, json=request)
     data = response.json()
     if 'error' in data.keys():
         raise  requests.RequestException()
@@ -39,10 +40,6 @@ else:
     lat = data['location']['lat']
     lon = data['location']['lng']
     accuracy = data['accuracy']
-    print(lat)
-    print(lon)
-    print(accuracy)
-
 
 json_object = json.dumps(data, indent=3)
 with open("loc.json", "w") as outfile:
