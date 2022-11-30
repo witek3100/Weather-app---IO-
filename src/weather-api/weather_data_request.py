@@ -2,10 +2,15 @@ import json
 import requests
 import re
 import subprocess
+import os
 
-#lokalizacja dla ktorej pobieramy dane
-lat = 50
-lon = 20
+
+# z loc.json odczytujemy lokalizacje dla jekiej pobieramy informacje
+with open(os.path.relpath("../location/loc.json")) as loc_file:
+    loc = json.load(loc_file)
+
+lat = loc['location']['lat']
+lon = loc['location']['lng']
 
 #adres url open meteo api
 API_URL = f'https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m,relativehumidity_2m,' \
@@ -16,7 +21,7 @@ API_URL = f'https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon
           'showers_sum,snowfall_sum,precipitation_hours,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant&timezone=auto'
 
 try:
-    response = requests.post(API_URL)  # wysylanie zapytania
+    response = requests.get(API_URL)  # wysylanie zapytania
     loc = response.json()
     if 'error' in loc.keys():
         raise requests.RequestException()
