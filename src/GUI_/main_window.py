@@ -14,7 +14,7 @@ class MainWindow(QMainWindow):
     def display_location(self, loc):
         loc_label = QLabel(self)
         loc_label.setGeometry(10, 470, 500, 20)
-        loc_label.setText("your current location: " + loc)
+        loc_label.setText("your current location: " + str(loc[0]) + " " + str(loc[1]))
         loc_label.setAlignment(Qt.AlignLeft)
         vbox = QVBoxLayout()
         vbox.addWidget(loc_label)
