@@ -9,6 +9,7 @@
 ============================================================================================================
 <pre>
 ├ src                           #folder źródłowy  
+   ├── gui
    ├── location       
    │      ├── location_request.py      # łączenie z google geolocation api -> zapisywanie odpowiedzi do loc.json  
    │      └── loc.json               
