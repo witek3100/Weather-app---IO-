@@ -11,8 +11,10 @@
 ├ src                           #folder źródłowy  
    ├── location       
    │      ├── location_request.py      # łączenie z google geolocation api -> zapisywanie odpowiedzi do loc.json  
-   │      └── loc.json                # plik json przechowujący informacje o lokalizacji użytkownika   
-   ├── weather-api                  # łączenie i pobieranie informacji z open meteo api
+   │      └── loc.json               
+   ├── weather-api                        
+   │      ├── weather_data_request.py     # łączenie z open meteo api -> zapisywanie odpowiedzi do weather_data.json    
+   │      └── weather_data.json
 </pre>
 
  ### Struktura aplikacji 
