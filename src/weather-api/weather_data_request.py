@@ -19,15 +19,17 @@ API_URL = f'https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon
           'anspiration,windspeed_10m,windspeed_80m,windgusts_10m,temperature_80m&daily=weathercode,temperature_2m_max,te' \
           'mperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,precipitation_sum,rain_sum,' \
           'showers_sum,snowfall_sum,precipitation_hours,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant&timezone=auto'
+def get_weather():
+    try:
+        response = requests.get(API_URL)  # wysylanie zapytania
+        loc = response.json()
+        if 'error' in loc.keys():
+            raise requests.RequestException()
+    except Exception as e:
+        print(e)
+    else:
+        json_object = json.dumps(loc, indent=3)
+        with open("weather_data.json", "w") as outfile:          #wrzucanie odpowiedzi do pliku json
+            outfile.write(json_object)
 
-try:
-    response = requests.get(API_URL)  # wysylanie zapytania
-    loc = response.json()
-    if 'error' in loc.keys():
-        raise requests.RequestException()
-except Exception as e:
-    print(e)
-else:
-    json_object = json.dumps(loc, indent=3)
-    with open("weather_data.json", "w") as outfile:          #wrzucanie odpowiedzi do pliku json
-        outfile.write(json_object)
+get_weather()

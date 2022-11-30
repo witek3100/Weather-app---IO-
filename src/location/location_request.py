@@ -2,6 +2,7 @@ import json
 import requests
 import re
 import subprocess
+import os
 
 api_url = "https://www.googleapis.com/geolocation/v1/geolocate?key="    #adres url do google geolocation api
 api_key = "AIzaSyB1PUPXMdxyKLi3EdVufBQqWXbd-oIBxjs"                     #klucz api  (konto wnowogorski10@gmail.com)
@@ -35,13 +36,16 @@ def get_location():
     try:
         response = requests.post(complete_api_url, json=request)
         loc = response.json()
+        print(loc['location']['lat'])
+        print(loc['location']['lng'])
+        print('\n')
         if 'error' in loc.keys():
             raise  requests.RequestException()
     except Exception as e:
         print(e)
     else:
         json_object = json.dumps(loc, indent=3)
-        with open("loc.json", "w") as outfile:          #wrzucanie odpowiedzi do pliku json
+        with open(os.path.relpath("loc.json"), "w") as outfile:          #wrzucanie odpowiedzi do pliku json
             outfile.write(json_object)
 
 get_location()
