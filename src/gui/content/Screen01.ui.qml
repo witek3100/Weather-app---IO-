@@ -14,27 +14,18 @@ Rectangle {
     id: main
     width: 1600
     height: 900
-    color: "#fce58f"
+    border.width: 2
+    gradient: Gradient {
+        GradientStop {
+            position: 0
+            color: "#c7b571"
+        }
 
-    TextField {
-        id: localisationSearchField
-        x: 105
-        y: 57
-        width: 1128
-        height: 65
-        text: "Enter your city..."
-        font.pointSize: 23
-        placeholderText: qsTr("Text Field")
-    }
-
-    Button {
-        id: button
-        x: 1245
-        y: 57
-        width: 274
-        height: 65
-        text: qsTr("Take localisation automatically")
-        font.pointSize: 14
+        GradientStop {
+            position: 1
+            color: "#5d5c57"
+        }
+        orientation: Gradient.Vertical
     }
 
     Rectangle {
@@ -43,10 +34,21 @@ Rectangle {
         y: 230
         width: 1414
         height: 562
-        color: "#fbf6d1"
         radius: 8
-        border.color: "#fbf6d1"
-        border.width: 8
+        border.color: "#ece8c9"
+        border.width: 0
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#65ca68"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#d8e3d9"
+            }
+            orientation: Gradient.Vertical
+        }
 
         Image {
             id: currentWeatherIco
@@ -99,6 +101,30 @@ Rectangle {
             font.pixelSize: 46
         }
 
+        Button {
+            id: compareModeButton
+            x: 1237
+            y: 515
+            width: 171
+            height: 40
+            text: qsTr("Compare Mode...")
+            font.pointSize: 15
+        }
+
+        Button {
+            id: settingsButton
+            x: -97
+            y: 623
+            width: 214
+            height: 39
+            text: qsTr("Settings")
+            font.pointSize: 17
+            smooth: true
+            highlighted: false
+            flat: false
+            icon.source: "images/126472.png"
+        }
+
         Text {
             id: temperature
             x: 448
@@ -108,28 +134,29 @@ Rectangle {
             text: qsTr("[TEMPERATURE]")
             font.pixelSize: 46
         }
-    }
 
-    Button {
-        id: button1
-        x: 1348
-        y: 752
-        width: 171
-        height: 40
-        text: qsTr("Compare Mode...")
-    }
+        ComboBox {
+            id: cityList
+            x: 0
+            y: -173
+            width: 1110
+            height: 65
+        }
 
-    Button {
-        id: button2
-        x: 0
-        y: 860
-        text: qsTr("Settings")
-        icon.source: "images/126472.png"
+        Button {
+            id: takeLocalisationButton
+            x: 1140
+            y: -173
+            width: 274
+            height: 65
+            text: qsTr("Take localisation automatically")
+            font.pointSize: 14
+        }
     }
     states: [
         State {
             name: "clicked"
-            when: button.checked
+            when: takeLocalisationButton.checked
         }
     ]
 }
