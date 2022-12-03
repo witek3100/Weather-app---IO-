@@ -1,7 +1,7 @@
 {
    "plus_code": {
-      "compound_code": "VCWH+WF8 Rome, Metropolitan City of Rome, Italy",
-      "global_code": "8FHJVCWH+WF8"
+      "compound_code": "VCWH+WGF Rome, Metropolitan City of Rome, Italy",
+      "global_code": "8FHJVCWH+WGF"
    },
    "results": [
       {
@@ -375,8 +375,8 @@
       {
          "address_components": [
             {
-               "long_name": "VCWH+WF",
-               "short_name": "VCWH+WF",
+               "long_name": "VCWH+WG",
+               "short_name": "VCWH+WG",
                "types": [
                   "plus_code"
                ]
@@ -422,38 +422,38 @@
                ]
             }
          ],
-         "formatted_address": "VCWH+WF Rome, Metropolitan City of Rome, Italy",
+         "formatted_address": "VCWH+WG Rome, Metropolitan City of Rome, Italy",
          "geometry": {
             "bounds": {
                "northeast": {
                   "lat": 41.897375,
-                  "lng": 12.42875
+                  "lng": 12.428875
                },
                "southwest": {
                   "lat": 41.89725,
-                  "lng": 12.428625
+                  "lng": 12.42875
                }
             },
             "location": {
-               "lat": 41.8972913,
-               "lng": 12.4287156
+               "lat": 41.8973158,
+               "lng": 12.4287857
             },
             "location_type": "GEOMETRIC_CENTER",
             "viewport": {
                "northeast": {
                   "lat": 41.89866148029149,
-                  "lng": 12.4300364802915
+                  "lng": 12.4301614802915
                },
                "southwest": {
                   "lat": 41.8959635197085,
-                  "lng": 12.4273385197085
+                  "lng": 12.4274635197085
                }
             }
          },
-         "place_id": "GhIJHz76cNryREAR7pFynIDbKEA",
+         "place_id": "GhIJkJd_PtvyREARJPyczInbKEA",
          "plus_code": {
-            "compound_code": "VCWH+WF Rome, Metropolitan City of Rome, Italy",
-            "global_code": "8FHJVCWH+WF"
+            "compound_code": "VCWH+WG Rome, Metropolitan City of Rome, Italy",
+            "global_code": "8FHJVCWH+WG"
          },
          "types": [
             "plus_code"

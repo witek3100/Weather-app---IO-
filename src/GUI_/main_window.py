@@ -112,7 +112,7 @@ class MainWindow(QMainWindow):
         location_request.get_location()
         with open(os.path.relpath("loc.json")) as loc_file:
             loc = json.load(loc_file)
-        return [loc['location']['lat'],loc['location']['lng']]
+        return [loc["results"][1]['geometry']['location']['lat'], loc["results"][1]['geometry']['location']['lng']]
 
     def get_weather(self):
         weather_data_request.get_weather()
