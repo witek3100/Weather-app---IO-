@@ -3,12 +3,15 @@ import requests
 import re
 import subprocess
 import os
+import googlemaps
 
-api_url = "https://www.googleapis.com/geolocation/v1/geolocate?key="    #adres url do google geolocation api
+base_geolocation_api_url = "https://www.googleapis.com/geolocation/v1/geolocate?key="    #adres url do google geolocation api
+base_geocoding_api_url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="    #adres url go google geocoding api
 api_key = "AIzaSyB1PUPXMdxyKLi3EdVufBQqWXbd-oIBxjs"                     #klucz api  (konto wnowogorski10@gmail.com)
-complete_api_url = api_url + api_key
 
-request = {'considerIp' : 'true'}   #zapytanie które zostanie wysłane na 'complete_api_url'
+# zapytanie które zostanie wysłane na 'complete_geolocation_api_url'
+complete_geolocation_api_url = base_geolocation_api_url + api_key
+request = {'considerIp' : 'true'}
 
 def get_location():
     ### TWORZENIE ZAPYTANIA ###
@@ -34,18 +37,24 @@ def get_location():
     ### OTRZYMYWANIE ODPOWIEDŹI ###
 
     try:
-        response = requests.post(complete_api_url, json=request)
+        response = requests.post(complete_geolocation_api_url, json=request)    #wysyłanie żądania
         loc = response.json()
-        print(loc['location']['lat'])
-        print(loc['location']['lng'])
-        print('\n')
+        lat = loc['location']['lat']
+        lng = loc['location']['lng']
         if 'error' in loc.keys():
             raise  requests.RequestException()
     except Exception as e:
         print(e)
-    else:
-        json_object = json.dumps(loc, indent=3)
-        with open(os.path.relpath("loc.json"), "w") as outfile:          #wrzucanie odpowiedzi do pliku json
-            outfile.write(json_object)
+
+    complete_geocoding_api_url = base_geocoding_api_url + str(lat) + "," + str(lng) + "&key=" + api_key     #żądanie do geocoding api
+    try:
+        cresponse = requests.get(complete_geocoding_api_url)
+        cloc = cresponse.json()
+    except Exception as e:
+        print(e)
+
+    json_object = json.dumps(cloc, indent=3)
+    with open("loc.json", "w") as outfile:  # wrzucanie odpowiedzi do pliku json
+        outfile.write(json_object)
 
 get_location()
