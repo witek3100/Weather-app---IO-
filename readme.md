@@ -12,7 +12,7 @@
    ├── gui
    │    ├── gui.py
    │    └── main_window.py
-   ├── location       
+   ├── location-api
    │      ├── location_request.py      # łączenie z google geolocation i geocoding api -> zapisywanie odpowiedzi do loc.json  
    │      └── loc.json               
    ├── weather-api                        
