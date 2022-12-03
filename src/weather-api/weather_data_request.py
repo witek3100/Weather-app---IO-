@@ -9,8 +9,8 @@ import os
 with open(os.path.relpath("../location/loc.json")) as loc_file:
     loc = json.load(loc_file)
 
-lat = loc['location']['lat']
-lon = loc['location']['lng']
+lat = loc["results"][1]['geometry']['location']['lat']
+lon = loc["results"][1]['geometry']['location']['lng']
 
 #adres url open meteo api
 API_URL = f'https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m,relativehumidity_2m,' \
