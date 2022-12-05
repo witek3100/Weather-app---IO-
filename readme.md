@@ -10,8 +10,6 @@
 <pre>
 ├ src                           #folder źródłowy  
    ├── gui
-   │    ├── gui.py
-   │    └── main_window.py
    ├── location-api
    │      ├── location_request.py      # łączenie z google geolocation i geocoding api -> zapisywanie odpowiedzi do loc.json  
    │      └── loc.json               
