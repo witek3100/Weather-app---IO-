@@ -1,0 +1,483 @@
+{
+   "plus_code": {
+      "compound_code": "W49W+Q3C Sk\u00f3rka, Poland",
+      "global_code": "9F3XW49W+Q3C"
+   },
+   "results": [
+      {
+         "address_components": [
+            {
+               "long_name": "1",
+               "short_name": "1",
+               "types": [
+                  "street_number"
+               ]
+            },
+            {
+               "long_name": "\u0628\u0648\u0644\u0646\u062f\u0627",
+               "short_name": "\u0628\u0648\u0644\u0646\u062f\u0627",
+               "types": [
+                  "route"
+               ]
+            },
+            {
+               "long_name": "\u0644\u0648\u0628\u0644\u0646",
+               "short_name": "\u0644\u0648\u0628\u0644\u0646",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Powiat zgierski",
+               "short_name": "Powiat zgierski",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "\u0141\u00f3dzkie",
+               "short_name": "\u0141\u00f3dzkie",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "20-147",
+               "short_name": "20-147",
+               "types": [
+                  "postal_code"
+               ]
+            }
+         ],
+         "formatted_address": "\u0628\u0648\u0644\u0646\u062f\u0627 1, 20-147 \u0644\u0648\u0628\u0644\u0646, Poland",
+         "geometry": {
+            "location": {
+               "lat": 51.9194541,
+               "lng": 19.1451396
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+               "northeast": {
+                  "lat": 51.9208030802915,
+                  "lng": 19.1464885802915
+               },
+               "southwest": {
+                  "lat": 51.9181051197085,
+                  "lng": 19.1437906197085
+               }
+            }
+         },
+         "place_id": "ChIJb4DLUoGvG0cRm6_ngiltzHk",
+         "plus_code": {
+            "compound_code": "W49W+Q3 Sk\u00f3rka, Poland",
+            "global_code": "9F3XW49W+Q3"
+         },
+         "types": [
+            "street_address"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "W49W+Q3",
+               "short_name": "W49W+Q3",
+               "types": [
+                  "plus_code"
+               ]
+            },
+            {
+               "long_name": "Sk\u00f3rka",
+               "short_name": "Sk\u00f3rka",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Zgierz County",
+               "short_name": "Zgierz County",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "\u0141\u00f3d\u017a Voivodeship",
+               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "95-045",
+               "short_name": "95-045",
+               "types": [
+                  "postal_code"
+               ]
+            }
+         ],
+         "formatted_address": "W49W+Q3 Sk\u00f3rka, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 51.91950000000001,
+                  "lng": 19.14525
+               },
+               "southwest": {
+                  "lat": 51.919375,
+                  "lng": 19.145125
+               }
+            },
+            "location": {
+               "lat": 51.9194381,
+               "lng": 19.145136
+            },
+            "location_type": "GEOMETRIC_CENTER",
+            "viewport": {
+               "northeast": {
+                  "lat": 51.9207864802915,
+                  "lng": 19.14653648029151
+               },
+               "southwest": {
+                  "lat": 51.9180885197085,
+                  "lng": 19.1438385197085
+               }
+            }
+         },
+         "place_id": "GhIJIxnNJbD1SUAR5ngFoiclM0A",
+         "plus_code": {
+            "compound_code": "W49W+Q3 Sk\u00f3rka, Poland",
+            "global_code": "9F3XW49W+Q3"
+         },
+         "types": [
+            "plus_code"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Gmina Parz\u0119czew",
+               "short_name": "Gmina Parz\u0119czew",
+               "types": [
+                  "administrative_area_level_3",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Zgierz County",
+               "short_name": "Zgierz County",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "\u0141\u00f3d\u017a Voivodeship",
+               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "99",
+               "short_name": "99",
+               "types": [
+                  "postal_code",
+                  "postal_code_prefix"
+               ]
+            }
+         ],
+         "formatted_address": "Gmina Parz\u0119czew, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 52.0124874,
+                  "lng": 19.3112736
+               },
+               "southwest": {
+                  "lat": 51.8773762,
+                  "lng": 19.1204452
+               }
+            },
+            "location": {
+               "lat": 51.9505614,
+               "lng": 19.20435
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 52.0124874,
+                  "lng": 19.3112736
+               },
+               "southwest": {
+                  "lat": 51.8773762,
+                  "lng": 19.1204452
+               }
+            }
+         },
+         "place_id": "ChIJmZ09JLavG0cR2LpKy6yMA4Q",
+         "types": [
+            "administrative_area_level_3",
+            "political"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Zgierz County",
+               "short_name": "Zgierz County",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "\u0141\u00f3d\u017a Voivodeship",
+               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "99",
+               "short_name": "99",
+               "types": [
+                  "postal_code",
+                  "postal_code_prefix"
+               ]
+            }
+         ],
+         "formatted_address": "Zgierz County, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 52.0369755,
+                  "lng": 19.8400275
+               },
+               "southwest": {
+                  "lat": 51.7712183,
+                  "lng": 19.1204452
+               }
+            },
+            "location": {
+               "lat": 51.9025569,
+               "lng": 19.4219463
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 52.0369755,
+                  "lng": 19.8400275
+               },
+               "southwest": {
+                  "lat": 51.7712183,
+                  "lng": 19.1204452
+               }
+            }
+         },
+         "place_id": "ChIJO5GtD9q3G0cR1OwdO7qSpl4",
+         "types": [
+            "administrative_area_level_2",
+            "political"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "95",
+               "short_name": "95",
+               "types": [
+                  "postal_code",
+                  "postal_code_prefix"
+               ]
+            },
+            {
+               "long_name": "\u0141\u00f3d\u017a Voivodeship",
+               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address": "Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 52.0326677,
+                  "lng": 19.9969122
+               },
+               "southwest": {
+                  "lat": 51.5139262,
+                  "lng": 19.0311816
+               }
+            },
+            "location": {
+               "lat": 51.8326334,
+               "lng": 19.5730733
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 52.0326677,
+                  "lng": 19.9969122
+               },
+               "southwest": {
+                  "lat": 51.5139262,
+                  "lng": 19.0311816
+               }
+            }
+         },
+         "place_id": "ChIJ3ShKnlzLG0cRlvohr39Kofg",
+         "types": [
+            "postal_code",
+            "postal_code_prefix"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "\u0141\u00f3d\u017a Voivodeship",
+               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address": "\u0141\u00f3d\u017a Voivodeship, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 52.3940809,
+                  "lng": 20.6592582
+               },
+               "southwest": {
+                  "lat": 50.8432772,
+                  "lng": 18.0745215
+               }
+            },
+            "location": {
+               "lat": 51.4634771,
+               "lng": 19.1726974
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 52.3940809,
+                  "lng": 20.6592582
+               },
+               "southwest": {
+                  "lat": 50.8432772,
+                  "lng": 18.0745215
+               }
+            }
+         },
+         "place_id": "ChIJZWt_KnA3GkcRRhcejaLlBRY",
+         "types": [
+            "administrative_area_level_1",
+            "political"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address": "Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 54.9054761,
+                  "lng": 24.1458931
+               },
+               "southwest": {
+                  "lat": 49.002025,
+                  "lng": 14.1228641
+               }
+            },
+            "location": {
+               "lat": 51.919438,
+               "lng": 19.145136
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 54.9054761,
+                  "lng": 24.1458931
+               },
+               "southwest": {
+                  "lat": 49.002025,
+                  "lng": 14.1228641
+               }
+            }
+         },
+         "place_id": "ChIJuwtkpGSZAEcR6lXMScpzdQk",
+         "types": [
+            "country",
+            "political"
+         ]
+      }
+   ],
+   "status": "OK"
+}

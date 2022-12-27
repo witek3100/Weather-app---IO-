@@ -6,7 +6,7 @@ import os
 
 
 # z loc.json odczytujemy lokalizacje dla jekiej pobieramy informacje
-with open(os.path.relpath("../location/loc.json")) as loc_file:
+with open(os.path.relpath("../WeatherApp/src/location/loc.json")) as loc_file:
     loc = json.load(loc_file)
 
 lat = loc["results"][1]['geometry']['location']['lat']
