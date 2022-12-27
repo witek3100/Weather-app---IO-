@@ -10,12 +10,8 @@
 <pre>
 ├ src                           #folder źródłowy  
    ├── gui
-   │    ├── asset_import
-   │    ├── content
-   │    ├── imports
-   │    └── src
-   ├── location       
-   │      ├── location_request.py      # łączenie z google geolocation api -> zapisywanie odpowiedzi do loc.json  
+   ├── location-api
+   │      ├── location_request.py      # łączenie z google geolocation i geocoding api -> zapisywanie odpowiedzi do loc.json  
    │      └── loc.json               
    ├── weather-api                        
    │      ├── weather_data_request.py     # łączenie z open meteo api -> zapisywanie odpowiedzi do weather_data.json    

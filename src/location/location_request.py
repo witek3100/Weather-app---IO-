@@ -26,7 +26,7 @@ def get_location():
         print("Unable to retrive wifi access points...")
     else:
         wifi_list = []                          #lista dostępnych punktów wifi
-        for i in range(len(mac_addresses)):                     # pętla for uzupełnia wifi_list wartościami pobranymi przez komendę netsh (linia 13)
+        for i in range(len(mac_addresses)):                     # pętla for uzupełnia wifi_list wartościami pobranymi przez komendę netsh 
             wifi_list.append({'macAddress' : mac_addresses[i],
                               'signalStrength' : str(int(signals_quality[i][0])/2-100),
                               'channel' : channels[i][1]
