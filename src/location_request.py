@@ -54,7 +54,7 @@ def get_location():
         print(e)
 
     json_object = json.dumps(cloc, indent=3)
-    with open("loc.json", "w") as outfile:  # wrzucanie odpowiedzi do pliku json
+    with open("../WeatherApp/src/loc.json", "w") as outfile:  # wrzucanie odpowiedzi do pliku json
         outfile.write(json_object)
 
 get_location()
