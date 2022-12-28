@@ -6,10 +6,9 @@ import os
 
 
 class WeatherApi:
-
     @staticmethod
     def get_weather():
-        # z loc.json odczytujemy lokalizacje dla jekiej pobieramy informacje
+        # z loc.json odczytujemy lokalizacje dla jakiej pobieramy informacje
         with open(os.path.relpath("loc.json")) as loc_file:
             loc = json.load(loc_file)
 
@@ -37,4 +36,3 @@ class WeatherApi:
                 outfile.write(json_object)
 
 
-WeatherApi.get_weather()
