@@ -90,6 +90,87 @@ class Ui_MainWindow(object):
         self.actiontime_zone = QtWidgets.QAction(MainWindow)
         self.actiontime_zone.setObjectName("actiontime_zone")
 
+        ##### FORECAST #####
+        self.frcs_label = QtWidgets.QLabel(self.centralwidget)
+        self.frcs_label.setGeometry(QtCore.QRect(50, 410, 891, 221))
+        self.frcs_label.setStyleSheet("background-color:rgba(30, 100, 190, 150);\n"
+                                      "font: 300 9pt \"Bahnschrift Light\";\n"
+                                      "border-radius:20px;")
+        self.frcs_label.setText("")
+        self.frcs_label.setObjectName("frcs_label")
+
+        self.h_temperature_2 = QtWidgets.QLabel(self.centralwidget)
+        self.h_temperature_2.setGeometry(QtCore.QRect(150, 510, 741, 20))
+        self.h_temperature_2.setStyleSheet("font: 700 9pt \"Segoe UI\";"
+                                           "color: rgb(255,255,255)")
+        self.h_temperature_2.setObjectName("h_temperature_2")
+        self.hours_2 = QtWidgets.QLabel(self.centralwidget)
+        self.hours_2.setGeometry(QtCore.QRect(130, 530, 811, 20))
+        self.hours_2.setStyleSheet("color:rgb(255,255,255);")
+        self.hours_2.setObjectName("hours_2")
+
+        self.Hourly_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_hourly_forecast())
+        self.Hourly_button.setGeometry(QtCore.QRect(60, 470, 83, 29))
+        self.Hourly_button.setStyleSheet("background-color:rgb(100,200,250)")
+        self.Hourly_button.setObjectName("Hourly_button")
+        self.Daily_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_daily_forecast())
+        self.Daily_button.setGeometry(QtCore.QRect(60, 510, 83, 29))
+        self.Daily_button.setStyleSheet("background-color:rgb(100,200,250)")
+        self.Daily_button.setObjectName("Daily_button")
+
+        self.dates_2 = QtWidgets.QLabel(self.centralwidget)
+        self.dates_2.setGeometry(QtCore.QRect(130, 530, 738, 20))
+        self.dates_2.setStyleSheet("color:rgb(255,255,255);")
+        self.dates_2.setObjectName("dates_2")
+        self.max_temperature_2 = QtWidgets.QLabel(self.centralwidget)
+        self.max_temperature_2.setGeometry(QtCore.QRect(160, 510, 741, 20))
+        self.max_temperature_2.setStyleSheet("font: 700 9pt \"Segoe UI\";"
+                                             "color: rgb(255,255,255)")
+        self.max_temperature_2.setObjectName("max_temperature_2")
+        self.min_temperature_2 = QtWidgets.QLabel(self.centralwidget)
+        self.min_temperature_2.setGeometry(QtCore.QRect(180, 510, 741, 20))
+        self.min_temperature_2.setStyleSheet("font:10pt \"Calibri\";\n"
+                                             "color:rgb(172, 172, 172)")
+        self.min_temperature_2.setObjectName("min_temperature_2")
+        self.min_4 = QtWidgets.QLabel(self.centralwidget)
+        self.min_4.setGeometry(QtCore.QRect(900, 500, 63, 21))
+        self.min_4.setStyleSheet("font:9pt \"Calibri\";\n"
+                                 "color:rgb(172, 172, 172)")
+        self.min_4.setObjectName("min_4")
+        self.max = QtWidgets.QLabel(self.centralwidget)
+        self.max.setGeometry(QtCore.QRect(900, 520, 63, 21))
+        self.max.setStyleSheet("font: 700 7pt \"Segoe UI\";"
+                               "color: rgb(255, 255, 255)")
+        self.max.setObjectName("max")
+
+        self.forecast = QtWidgets.QLabel(self.centralwidget)
+        self.forecast.setGeometry(QtCore.QRect(60, 430, 101, 31))
+        self.forecast.setStyleSheet("font: 15pt \"Calibri\";\n"
+                                    "color:rgb(255, 255, 255)")
+        self.forecast.setObjectName("forecast")
+        self.frcs_label.raise_()
+        self.hours_2.raise_()
+        self.h_temperature_2.raise_()
+        self.forecast.raise_()
+        self.city_label.raise_()
+        self.label_2.raise_()
+        self.pushButton.raise_()
+        self.pushButton_2.raise_()
+        self.pushButton_3.raise_()
+        self.lineEdit.raise_()
+        self.pushButton_4.raise_()
+        self.temperature_label.raise_()
+        self.wth.raise_()
+        self.dates_2.raise_()
+        self.max_temperature_2.raise_()
+        self.min_temperature_2.raise_()
+        self.min_4.raise_()
+        self.max.raise_()
+        self.current_data_label1.raise_()
+        self.current_data_label2.raise_()
+        self.Hourly_button.raise_()
+        self.Daily_button.raise_()
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -151,6 +232,28 @@ class Ui_MainWindow(object):
         else:
             self.current_location_label.setText("CURRENT LOCATION: {}   {}".format(self.lat, self.lon))
 
+    def show_daily_forecast(self):
+        #hide hourly
+        self.hours_2.hide()
+        self.h_temperature_2.hide()
+        #display daily
+        self.max.show()
+        self.min_4.show()
+        self.dates_2.show()
+        self.min_temperature_2.show()
+        self.max_temperature_2.show()
+
+
+    def show_hourly_forecast(self):
+        #hide daily
+        self.max.hide()
+        self.min_4.hide()
+        self.dates_2.hide()
+        self.min_temperature_2.hide()
+        self.max_temperature_2.hide()
+        #show hourly
+        self.hours_2.show()
+        self.h_temperature_2.show()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -168,7 +271,23 @@ class Ui_MainWindow(object):
             _translate("MainWindow", "Wind  se 10ms       Visibility 10km       Barometer 1013 hpa"))
         self.current_data_label2.setText(
             _translate("MainWindow", "Feels Like 24°C      Precipitation None        Humidity 80%"))
-
+        self.actionChange_units.setText(_translate("MainWindow", "Units"))
+        self.actiontime_zone.setText(_translate("MainWindow", "Time zone"))
+        self.forecast.setText(_translate("MainWindow", "Forecast"))
+        self.Hourly_button.setText(_translate("MainWindow", "Hourly"))
+        self.Daily_button.setText(_translate("MainWindow", "Daily"))
+        self.h_temperature_2.setText(_translate("MainWindow",
+                                                "             4°C                         4°C                        4°C                         4°C                          4°C                         4°C"))
+        self.hours_2.setText(_translate("MainWindow",
+                                        "                  3:00                        7:00                       11:00                       15:00                       19:00                       23:00"))
+        self.dates_2.setText(_translate("MainWindow",
+                                        "                 30.12                       31.12                       01.01                       02.01                       03.01                       04.01"))
+        self.max_temperature_2.setText(_translate("MainWindow",
+                                                  "              4°C                         4°C                          4°C                          4°C                          4°C                          4°C"))
+        self.min_temperature_2.setText(_translate("MainWindow",
+                                                  "1°C                          1°C                          1°C                          1°C                          1°C                          1°C   "))
+        self.min_4.setText(_translate("MainWindow", "MIN"))
+        self.max.setText(_translate("MainWindow", "MAX"))
 
 
 if __name__ == "__main__":
@@ -177,5 +296,8 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    ui.reload_location()
+    ui.update_weather()
+    ui.show_daily_forecast()
     MainWindow.show()
     sys.exit(app.exec_())
