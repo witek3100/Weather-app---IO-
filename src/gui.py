@@ -209,17 +209,60 @@ class Ui_MainWindow(object):
             self.wth.setText("Snow")
             percipation = snow
 
-        #set current_data_label1
-        feels_like = self.weather["hourly"]["apparent_temperature"][hour]
-        humidity = self.weather["hourly"]["relativehumidity_2m"][hour]
-        self.current_data_label2.setText("Feels Like {}°C      Precipitation {} mm       Humidity {}%".format(feels_like, percipation, humidity))
-
-        #set current_data_label2
+        """ set current_data_label1 """
         wind = self.weather["hourly"]["windspeed_10m"][hour]
         visibility = self.weather["hourly"]["visibility"][hour]
         barometer = self.weather["hourly"]["pressure_msl"][hour]
         self.current_data_label1.setText("Wind  {} km/h       Visibility {} m       Barometer {} hPa".format(wind, visibility, barometer))
 
+        """ set current_data_label2 """
+        feels_like = self.weather["hourly"]["apparent_temperature"][hour]
+        humidity = self.weather["hourly"]["relativehumidity_2m"][hour]
+        self.current_data_label2.setText("Feels Like {}°C      Precipitation {} mm       Humidity {}%".format(feels_like, percipation, humidity))
+
+        """ set dates label"""
+        self.dates_2.setText("                 {}                       {}                       {}"
+                            "                       {}                       {}                       {}"
+                            .format(self.weather['daily']['time'][1][8:10] + "." + self.weather['daily']['time'][1][5:7],
+                                    self.weather['daily']['time'][2][8:10] + "." + self.weather['daily']['time'][2][5:7],
+                                    self.weather['daily']['time'][3][8:10] + "." + self.weather['daily']['time'][3][5:7],
+                                    self.weather['daily']['time'][4][8:10] + "." + self.weather['daily']['time'][4][5:7],
+                                    self.weather['daily']['time'][5][8:10] + "." + self.weather['daily']['time'][5][5:7],
+                                    self.weather['daily']['time'][6][8:10] + "." + self.weather['daily']['time'][6][5:7]))
+
+        """ set hours label"""
+        self.hours_2.setText("                  3:00                        7:00                       11:00"
+                             "                       15:00                       19:00                       23:00")
+
+        """ set h_temperature label """
+        self.h_temperature_2.setText("             {}°C                         {}°C                        {}°C"
+                                     "                         {}°C                          {}°C                         {}°C"
+                                     .format(int(self.weather['hourly']['temperature_2m'][4]),
+                                             int(self.weather['hourly']['temperature_2m'][7]),
+                                             int(self.weather['hourly']['temperature_2m'][10]),
+                                             int(self.weather['hourly']['temperature_2m'][13]),
+                                             int(self.weather['hourly']['temperature_2m'][16]),
+                                             int(self.weather['hourly']['temperature_2m'][19]),))
+
+        """ set max temperature label """
+        self.max_temperature_2.setText("              {}°C                         {}°C                        {}°C"
+                                       "                        {}°C                        {}°C                         {}°C"
+                                       .format(int(self.weather['daily']['temperature_2m_max'][1]),
+                                               int(self.weather['daily']['temperature_2m_max'][2]),
+                                               int(self.weather['daily']['temperature_2m_max'][3]),
+                                               int(self.weather['daily']['temperature_2m_max'][4]),
+                                               int(self.weather['daily']['temperature_2m_max'][5]),
+                                               int(self.weather['daily']['temperature_2m_max'][6])))
+
+        """ set min temperature label """
+        self.min_temperature_2.setText(" {}°C                         {}°C                         {}°C"
+                                       "                         {}°C                         {}°C                         {}°C"
+                                       .format(int(self.weather['daily']['temperature_2m_min'][1]),
+                                               int(self.weather['daily']['temperature_2m_min'][2]),
+                                               int(self.weather['daily']['temperature_2m_min'][3]),
+                                               int(self.weather['daily']['temperature_2m_min'][4]),
+                                               int(self.weather['daily']['temperature_2m_min'][5]),
+                                               int(self.weather['daily']['temperature_2m_min'][6])))
     def reload_location(self):
         try:
             LocationApi.get_location()
@@ -276,14 +319,6 @@ class Ui_MainWindow(object):
         self.forecast.setText(_translate("MainWindow", "Forecast"))
         self.Hourly_button.setText(_translate("MainWindow", "Hourly"))
         self.Daily_button.setText(_translate("MainWindow", "Daily"))
-        self.h_temperature_2.setText(_translate("MainWindow",
-                                                "             4°C                         4°C                        4°C                         4°C                          4°C                         4°C"))
-        self.hours_2.setText(_translate("MainWindow",
-                                        "                  3:00                        7:00                       11:00                       15:00                       19:00                       23:00"))
-        self.dates_2.setText(_translate("MainWindow",
-                                        "                 30.12                       31.12                       01.01                       02.01                       03.01                       04.01"))
-        self.max_temperature_2.setText(_translate("MainWindow",
-                                                  "              4°C                         4°C                          4°C                          4°C                          4°C                          4°C"))
         self.min_temperature_2.setText(_translate("MainWindow",
                                                   "1°C                          1°C                          1°C                          1°C                          1°C                          1°C   "))
         self.min_4.setText(_translate("MainWindow", "MIN"))
