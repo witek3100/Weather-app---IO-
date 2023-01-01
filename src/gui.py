@@ -107,11 +107,12 @@ class Ui_MainWindow(object):
         self.frcs_label.setText("")
         self.frcs_label.setObjectName("frcs_label")
 
-        self.h_temperature_2 = QtWidgets.QLabel(self.centralwidget)
-        self.h_temperature_2.setGeometry(QtCore.QRect(150, 510, 741, 20))
-        self.h_temperature_2.setStyleSheet("font: 700 9pt \"Segoe UI\";"
-                                           "color: rgb(255,255,255)")
-        self.h_temperature_2.setObjectName("h_temperature_2")
+        self.hourly_temperatures = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
+        for c, i in enumerate(self.hourly_temperatures):
+            i.setGeometry(QtCore.QRect(208 + 123 * c, 510, 741, 20))
+            i.setStyleSheet("font: 700 9pt \"Segoe UI\";""color: rgb(255,255,255)")
+            i.setObjectName("hourly_temperature_{}".format(c+1))
+
         self.hours_2 = QtWidgets.QLabel(self.centralwidget)
         self.hours_2.setGeometry(QtCore.QRect(130, 530, 811, 20))
         self.hours_2.setStyleSheet("color:rgb(255,255,255);")
@@ -133,16 +134,18 @@ class Ui_MainWindow(object):
         self.dates_2.setGeometry(QtCore.QRect(130, 530, 738, 20))
         self.dates_2.setStyleSheet("color:rgb(255,255,255);")
         self.dates_2.setObjectName("dates_2")
-        self.max_temperature_2 = QtWidgets.QLabel(self.centralwidget)
-        self.max_temperature_2.setGeometry(QtCore.QRect(160, 510, 741, 20))
-        self.max_temperature_2.setStyleSheet("font: 700 9pt \"Segoe UI\";"
-                                             "color: rgb(255,255,255)")
-        self.max_temperature_2.setObjectName("max_temperature_2")
-        self.min_temperature_2 = QtWidgets.QLabel(self.centralwidget)
-        self.min_temperature_2.setGeometry(QtCore.QRect(180, 510, 741, 20))
-        self.min_temperature_2.setStyleSheet("font:10pt \"Calibri\";\n"
-                                             "color:rgb(172, 172, 172)")
-        self.min_temperature_2.setObjectName("min_temperature_2")
+
+        self.max_temperatures = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
+        for c, i in enumerate(self.max_temperatures):
+            i.setGeometry(QtCore.QRect(215 + c * 125, 510, 25, 20))
+            i.setStyleSheet("font: 700 9pt \"Segoe UI\";""color: rgb(255,255,255)")
+            i.setObjectName("max_temperature_{}".format(c+1))
+
+        self.min_temperatures = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
+        for c, i in enumerate(self.min_temperatures):
+            i.setGeometry(QtCore.QRect(180 + c * 125, 510, 25, 20))
+            i.setStyleSheet("font:10pt \"Calibri\";\n""color:rgb(172, 172, 172)")
+            i.setObjectName("max_temperature_{}".format(c + 1))
 
         self.min = QtWidgets.QLabel(self.centralwidget)
         self.min.setGeometry(QtCore.QRect(900, 500, 63, 21))
@@ -161,6 +164,11 @@ class Ui_MainWindow(object):
         self.forecast.setStyleSheet("font: 15pt \"Calibri\";\n""color:rgb(255, 255, 255)")
         self.forecast.setObjectName("forecast")
         self.forecast.setText('Forecast')
+
+        self.main_icon = QtWidgets.QLabel(self.centralwidget)
+        self.main_icon.setGeometry(QtCore.QRect(230, 120, 141, 121))
+        self.main_icon.setText("")
+        self.main_icon.setObjectName("main_icon")
 
         self.hourly_icons = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
         for c, i in enumerate(self.hourly_icons):
@@ -202,9 +210,9 @@ class Ui_MainWindow(object):
             self.wth.setText("Mostly clear")
         elif 30 <= clouds < 60:
             self.wth.setText("Partly clear")
-        elif 60 <= clouds < 95:
+        elif 60 <= clouds < 90:
             self.wth.setText("Broken clouds")
-        elif 95 <= clouds <= 100:
+        elif 90 <= clouds <= 100:
             self.wth.setText("Overcast")
         rain = self.weather["hourly"]["rain"][hour]
         percipation = 0
@@ -241,43 +249,20 @@ class Ui_MainWindow(object):
         self.hours_2.setText("                  3:00                        7:00                       11:00"
                              "                       15:00                       19:00                       23:00")
 
-        """ set h_temperature label """
-        self.h_temperature_2.setText("             {}°C                         {}°C                        {}°C"
-                                     "                         {}°C                          {}°C                         {}°C"
-                                     .format(int(self.weather['hourly']['temperature_2m'][4]),
-                                             int(self.weather['hourly']['temperature_2m'][7]),
-                                             int(self.weather['hourly']['temperature_2m'][10]),
-                                             int(self.weather['hourly']['temperature_2m'][13]),
-                                             int(self.weather['hourly']['temperature_2m'][16]),
-                                             int(self.weather['hourly']['temperature_2m'][19]),))
 
-        """ set max temperature label """
-        self.max_temperature_2.setText("              {}°C                         {}°C                        {}°C"
-                                       "                        {}°C                        {}°C                         {}°C"
-                                       .format(int(self.weather['daily']['temperature_2m_max'][1]),
-                                               int(self.weather['daily']['temperature_2m_max'][2]),
-                                               int(self.weather['daily']['temperature_2m_max'][3]),
-                                               int(self.weather['daily']['temperature_2m_max'][4]),
-                                               int(self.weather['daily']['temperature_2m_max'][5]),
-                                               int(self.weather['daily']['temperature_2m_max'][6])))
 
-        """ set min temperature label """
-        self.min_temperature_2.setText(" {}°C                         {}°C                         {}°C"
-                                       "                         {}°C                         {}°C                         {}°C"
-                                       .format(int(self.weather['daily']['temperature_2m_min'][1]),
-                                               int(self.weather['daily']['temperature_2m_min'][2]),
-                                               int(self.weather['daily']['temperature_2m_min'][3]),
-                                               int(self.weather['daily']['temperature_2m_min'][4]),
-                                               int(self.weather['daily']['temperature_2m_min'][5]),
-                                               int(self.weather['daily']['temperature_2m_min'][6])))
+        """ set hourly temperature labels """
+        for c, i in enumerate(self.hourly_temperatures):
+            i.setText("{}°C".format(int(self.weather['hourly']['temperature_2m'][3+c*4])))
 
-        self.main_icon = QtWidgets.QLabel(self.centralwidget)
-        self.main_icon.setGeometry(QtCore.QRect(230, 120, 141, 121))
-        self.main_icon.setText("")
-        self.main_icon.setObjectName("main_icon")
-        pixmap = self.choose_main_icon()
-        self.main_icon.setPixmap(pixmap)
-        self.main_icon.resize(pixmap.width(), pixmap.height())
+        """ set max temperature labels """
+        for c, i in enumerate(self.max_temperatures):
+            i.setText("{}°C".format(int(self.weather['daily']['temperature_2m_max'][c+1])))
+
+        """ set min temperature labels """
+        for c, i in enumerate(self.min_temperatures):
+            i.setText("{}°C".format(int(self.weather['daily']['temperature_2m_min'][c+1])))
+
 
         for c, i in enumerate(self.daily_icons):
             pixmap = self.choose_icon('daily', c+1)
@@ -285,9 +270,14 @@ class Ui_MainWindow(object):
             i.resize(pixmap.width(), pixmap.height())
 
         for c, i in enumerate(self.hourly_icons):
-            pixmap = self.choose_icon('hourly', c+1)
+            pixmap = self.choose_icon('hourly', 3+4*c)
             i.setPixmap(pixmap)
             i.resize(pixmap.width(), pixmap.height())
+
+        pixmap2 = self.choose_main_icon()
+        self.main_icon.setPixmap(pixmap2)
+        self.main_icon.resize(pixmap2.width(), pixmap2.height())
+
 
     def reload_location(self):
         try:
@@ -304,7 +294,8 @@ class Ui_MainWindow(object):
     def show_daily_forecast(self):
         #hide hourly
         self.hours_2.hide()
-        self.h_temperature_2.hide()
+        for i in self.hourly_temperatures:
+            i.hide()
         for i in self.hourly_icons:
             i.hide()
 
@@ -312,8 +303,10 @@ class Ui_MainWindow(object):
         self.max.show()
         self.min.show()
         self.dates_2.show()
-        self.min_temperature_2.show()
-        self.max_temperature_2.show()
+        for i in self.min_temperatures:
+            i.show()
+        for i in self.max_temperatures:
+            i.show()
         for i in self.daily_icons:
             i.show()
 
@@ -322,20 +315,20 @@ class Ui_MainWindow(object):
         self.max.hide()
         self.min.hide()
         self.dates_2.hide()
-        self.min_temperature_2.hide()
-        self.max_temperature_2.hide()
+        for i in self.min_temperatures:
+            i.hide()
+        for i in self.max_temperatures:
+            i.hide()
         for i in self.daily_icons:
             i.hide()
 
         #show hourly
         self.hours_2.show()
-        self.h_temperature_2.show()
+        for i in self.hourly_temperatures:
+            i.show()
         for i in self.hourly_icons:
             i.show()
     def choose_icon(self, dh: str, x: int):
-        t = time.localtime()
-        hour = int(time.strftime("%H", t))
-
         if dh == "daily":
             if self.weather[dh]["precipitation_hours"][x] < 3:
                 return QtGui.QPixmap('../icons/sun_small.png')
@@ -346,17 +339,11 @@ class Ui_MainWindow(object):
         if dh == "hourly":
             if self.weather[dh]["precipitation"][x] > 0:
                 return QtGui.QPixmap('../icons/rain_day_small.png')
-            elif self.weather[dh]["cloudcover"][x] < 20:
-                if 6 < hour < 20:
-                    return QtGui.QPixmap('../icons/sun_small.png')
-                else:
-                    return QtGui.QPixmap('..icons/moon_small.png')
-            elif 20 <= self.weather[dh]["cloudcover"][x] < 80:
-                if 6 < hour < 20:
-                    return QtGui.QPixmap('../icons/few_clouds_small.png')
-                else:
-                    return QtGui.QPixmap('..icons/few_clouds_night_small.png')
-            elif 80 <= self.weather[dh]["cloudcover"][x]:
+            if self.weather[dh]["cloudcover"][x] < 20:
+                return QtGui.QPixmap('../icons/sun_small.png')
+            if 20 <= self.weather[dh]["cloudcover"][x] < 80:
+                return QtGui.QPixmap('../icons/few_clouds_small.png')
+            if self.weather[dh]["cloudcover"][x] >= 80:
                 return QtGui.QPixmap('../icons/ovc_clouds_small.png')
 
     def choose_main_icon(self):
