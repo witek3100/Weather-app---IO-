@@ -10,6 +10,11 @@ import subprocess
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+
+        WeatherApi.get_weather()
+        with open(os.path.relpath("weather_data.json")) as wth_file:
+            self.weather = json.load(wth_file)
+
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(991, 719)
         MainWindow.setStyleSheet("QWidget#centralwidget{\n"
@@ -148,10 +153,116 @@ class Ui_MainWindow(object):
         self.forecast.setStyleSheet("font: 15pt \"Calibri\";\n"
                                     "color:rgb(255, 255, 255)")
         self.forecast.setObjectName("forecast")
+
+        self.main_icon = QtWidgets.QLabel(self.centralwidget)
+        self.main_icon.setGeometry(QtCore.QRect(230, 120, 141, 121))
+        self.main_icon.setText("")
+        self.main_icon.setObjectName("main_icon")
+        pixmap = self.choose_main_icon()
+        self.main_icon.setPixmap(pixmap)
+        self.main_icon.resize(pixmap.width(), pixmap.height())
+
+        self.d_icon_1 = QtWidgets.QLabel(self.centralwidget)
+        self.d_icon_1.setGeometry(QtCore.QRect(180, 440, 63, 51))
+        self.d_icon_1.setText("")
+        self.d_icon_1.setObjectName("d_icon_1")
+        pixmap = self.choose_icon(dh='daily', x=1)
+        self.d_icon_1.setPixmap(pixmap)
+        self.d_icon_1.resize(pixmap.width(), pixmap.height())
+
+        self.d_icon_2 = QtWidgets.QLabel(self.centralwidget)
+        self.d_icon_2.setGeometry(QtCore.QRect(305, 440, 63, 51))
+        self.d_icon_2.setText("")
+        self.d_icon_2.setObjectName("d_icon_2")
+        pixmap = self.choose_icon(dh='daily', x=2)
+        self.d_icon_2.setPixmap(pixmap)
+        self.d_icon_2.resize(pixmap.width(), pixmap.height())
+
+        self.d_icon_3 = QtWidgets.QLabel(self.centralwidget)
+        self.d_icon_3.setGeometry(QtCore.QRect(425, 440, 63, 51))
+        self.d_icon_3.setText("")
+        self.d_icon_3.setObjectName("d_icon_3")
+        pixmap = self.choose_icon(dh='daily', x=3)
+        self.d_icon_3.setPixmap(pixmap)
+        self.d_icon_3.resize(pixmap.width(), pixmap.height())
+
+        self.d_icon_4 = QtWidgets.QLabel(self.centralwidget)
+        self.d_icon_4.setGeometry(QtCore.QRect(550, 440, 63, 51))
+        self.d_icon_4.setText("")
+        self.d_icon_4.setObjectName("d_icon_4")
+        pixmap = self.choose_icon(dh='daily', x=4)
+        self.d_icon_4.setPixmap(pixmap)
+        self.d_icon_4.resize(pixmap.width(), pixmap.height())
+
+        self.d_icon_5 = QtWidgets.QLabel(self.centralwidget)
+        self.d_icon_5.setGeometry(QtCore.QRect(675, 440, 63, 51))
+        self.d_icon_5.setText("")
+        self.d_icon_5.setObjectName("d_icon_5")
+        pixmap = self.choose_icon(dh='daily', x=5)
+        self.d_icon_5.setPixmap(pixmap)
+        self.d_icon_5.resize(pixmap.width(), pixmap.height())
+
+        self.d_icon_6 = QtWidgets.QLabel(self.centralwidget)
+        self.d_icon_6.setGeometry(QtCore.QRect(795, 440, 63, 51))
+        self.d_icon_6.setText("")
+        self.d_icon_6.setObjectName("d_icon_6")
+        pixmap = self.choose_icon(dh='daily', x=6)
+        self.d_icon_6.setPixmap(pixmap)
+        self.d_icon_6.resize(pixmap.width(), pixmap.height())
+
+        self.h_icon_1 = QtWidgets.QLabel(self.centralwidget)
+        self.h_icon_1.setGeometry(QtCore.QRect(180, 440, 63, 51))
+        self.h_icon_1.setText("")
+        self.h_icon_1.setObjectName("d_icon_1")
+        pixmap = self.choose_icon(dh='hourly', x=1)
+        self.h_icon_1.setPixmap(pixmap)
+        self.h_icon_1.resize(pixmap.width(), pixmap.height())
+
+        self.h_icon_2 = QtWidgets.QLabel(self.centralwidget)
+        self.h_icon_2.setGeometry(QtCore.QRect(305, 440, 63, 51))
+        self.h_icon_2.setText("")
+        self.h_icon_2.setObjectName("d_icon_2")
+        pixmap = self.choose_icon(dh='hourly', x=2)
+        self.h_icon_2.setPixmap(pixmap)
+        self.h_icon_2.resize(pixmap.width(), pixmap.height())
+
+        self.h_icon_3 = QtWidgets.QLabel(self.centralwidget)
+        self.h_icon_3.setGeometry(QtCore.QRect(425, 440, 63, 51))
+        self.h_icon_3.setText("")
+        self.h_icon_3.setObjectName("d_icon_3")
+        pixmap = self.choose_icon(dh='hourly', x=3)
+        self.h_icon_3.setPixmap(pixmap)
+        self.h_icon_3.resize(pixmap.width(), pixmap.height())
+
+        self.h_icon_4 = QtWidgets.QLabel(self.centralwidget)
+        self.h_icon_4.setGeometry(QtCore.QRect(550, 440, 63, 51))
+        self.h_icon_4.setText("")
+        self.h_icon_4.setObjectName("d_icon_4")
+        pixmap = self.choose_icon(dh='hourly', x=4)
+        self.h_icon_4.setPixmap(pixmap)
+        self.h_icon_4.resize(pixmap.width(), pixmap.height())
+
+        self.h_icon_5 = QtWidgets.QLabel(self.centralwidget)
+        self.h_icon_5.setGeometry(QtCore.QRect(675, 440, 63, 51))
+        self.h_icon_5.setText("")
+        self.h_icon_5.setObjectName("d_icon_5")
+        pixmap = self.choose_icon(dh='hourly', x=5)
+        self.h_icon_5.setPixmap(pixmap)
+        self.h_icon_5.resize(pixmap.width(), pixmap.height())
+
+        self.h_icon_6 = QtWidgets.QLabel(self.centralwidget)
+        self.h_icon_6.setGeometry(QtCore.QRect(795, 440, 63, 51))
+        self.h_icon_6.setText("")
+        self.h_icon_6.setObjectName("d_icon_6")
+        pixmap = self.choose_icon(dh='hourly', x=6)
+        self.h_icon_6.setPixmap(pixmap)
+        self.h_icon_6.resize(pixmap.width(), pixmap.height())
+
         self.frcs_label.raise_()
         self.hours_2.raise_()
         self.h_temperature_2.raise_()
         self.forecast.raise_()
+        self.main_icon.raise_()
         self.city_label.raise_()
         self.label_2.raise_()
         self.pushButton.raise_()
@@ -170,9 +281,22 @@ class Ui_MainWindow(object):
         self.current_data_label2.raise_()
         self.Hourly_button.raise_()
         self.Daily_button.raise_()
+        self.d_icon_1.raise_()
+        self.d_icon_2.raise_()
+        self.d_icon_3.raise_()
+        self.d_icon_4.raise_()
+        self.d_icon_5.raise_()
+        self.d_icon_6.raise_()
+        self.h_icon_1.raise_()
+        self.h_icon_2.raise_()
+        self.h_icon_3.raise_()
+        self.h_icon_4.raise_()
+        self.h_icon_5.raise_()
+        self.h_icon_6.raise_()
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
 
     def update_city(self):
         self.label.setText(self.lineEdit.toPlainText())
@@ -184,10 +308,10 @@ class Ui_MainWindow(object):
         t = time.localtime()
         hour = int(time.strftime("%H", t))
 
-        #set temperature label
+        """ set temperature label """
         self.temperature_label.setText("{}°C".format(self.weather["hourly"]["temperature_2m"][hour]))
 
-        #set wth label and main icon
+        """ set wth label and main icon """
         clouds = self.weather["hourly"]["cloudcover"][hour]
         if 0 <= clouds < 10:
             self.wth.setText("Clear sky")
@@ -230,7 +354,7 @@ class Ui_MainWindow(object):
                                     self.weather['daily']['time'][5][8:10] + "." + self.weather['daily']['time'][5][5:7],
                                     self.weather['daily']['time'][6][8:10] + "." + self.weather['daily']['time'][6][5:7]))
 
-        """ set hours label"""
+        """ set hours label """
         self.hours_2.setText("                  3:00                        7:00                       11:00"
                              "                       15:00                       19:00                       23:00")
 
@@ -279,13 +403,24 @@ class Ui_MainWindow(object):
         #hide hourly
         self.hours_2.hide()
         self.h_temperature_2.hide()
+        self.h_icon_1.hide()
+        self.h_icon_2.hide()
+        self.h_icon_3.hide()
+        self.h_icon_4.hide()
+        self.h_icon_5.hide()
+        self.h_icon_6.hide()
         #display daily
         self.max.show()
         self.min_4.show()
         self.dates_2.show()
         self.min_temperature_2.show()
         self.max_temperature_2.show()
-
+        self.d_icon_1.show()
+        self.d_icon_2.show()
+        self.d_icon_3.show()
+        self.d_icon_4.show()
+        self.d_icon_5.show()
+        self.d_icon_6.show()
 
     def show_hourly_forecast(self):
         #hide daily
@@ -294,9 +429,67 @@ class Ui_MainWindow(object):
         self.dates_2.hide()
         self.min_temperature_2.hide()
         self.max_temperature_2.hide()
+        self.d_icon_1.hide()
+        self.d_icon_2.hide()
+        self.d_icon_3.hide()
+        self.d_icon_4.hide()
+        self.d_icon_5.hide()
+        self.d_icon_6.hide()
         #show hourly
         self.hours_2.show()
         self.h_temperature_2.show()
+        self.h_icon_1.show()
+        self.h_icon_2.show()
+        self.h_icon_3.show()
+        self.h_icon_4.show()
+        self.h_icon_5.show()
+        self.h_icon_6.show()
+
+    def choose_icon(self, dh: str, x: int):
+        t = time.localtime()
+        hour = int(time.strftime("%H", t))
+
+        if dh == "daily":
+            if self.weather[dh]["precipitation_hours"][x] < 3:
+                return QtGui.QPixmap('../icons/sun_small.png')
+            if 3 <= self.weather[dh]["precipitation_hours"][x] < 6:
+                return QtGui.QPixmap('../icons/few_clouds_small.png')
+            if 6 <= self.weather[dh]["precipitation_hours"][x]:
+                return QtGui.QPixmap('../icons/rain_day_small.png')
+        if dh == "hourly":
+            if self.weather[dh]["precipitation"][x] > 0:
+                return QtGui.QPixmap('../icons/rain_day_small.png')
+            elif self.weather[dh]["cloudcover"][x] < 20:
+                if 6 < hour < 20:
+                    return QtGui.QPixmap('../icons/sun_small.png')
+                else:
+                    return QtGui.QPixmap('..icons/moon_small.png')
+            elif 20 <= self.weather[dh]["cloudcover"][x] < 80:
+                if 6 < hour < 20:
+                    return QtGui.QPixmap('../icons/few_clouds_small.png')
+                else:
+                    return QtGui.QPixmap('..icons/few_clouds_night_small.png')
+            elif 80 <= self.weather[dh]["cloudcover"][x]:
+                return QtGui.QPixmap('../icons/ovc_clouds_small.png')
+
+    def choose_main_icon(self):
+        t = time.localtime()
+        hour = int(time.strftime("%H", t))
+
+        if self.weather["hourly"]["precipitation"][hour] > 0:
+            return QtGui.QPixmap('../icons/rain_day.png')
+        elif self.weather["hourly"]["cloudcover"][hour] < 20:
+            if 6 < hour < 20:
+                return QtGui.QPixmap('../icons/sun.png')
+            else:
+                return QtGui.QPixmap('..icons/moon.png')
+        elif 20 <= self.weather["hourly"]["cloudcover"][hour] < 80:
+            if 6 < hour < 20:
+                return QtGui.QPixmap('../icons/few_clouds.png')
+            else:
+                return QtGui.QPixmap('..icons/few_clouds_night.png')
+        elif 80 <= self.weather["hourly"]["cloudcover"][hour]:
+            return QtGui.QPixmap('../icons/ovc_clouds.png')
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
