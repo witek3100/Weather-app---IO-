@@ -162,11 +162,24 @@ class Ui_MainWindow(object):
         self.forecast.setObjectName("forecast")
         self.forecast.setText('Forecast')
 
+        self.hourly_icons = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
+        for c, i in enumerate(self.hourly_icons):
+            i.setGeometry(QtCore.QRect(180 + c * 123, 440, 63, 51))
+            i.setText("")
+            i.setObjectName("h_icon_{}".format(c + 1))
+
+        self.daily_icons = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
+        for c, i in enumerate(self.daily_icons):
+            i.setGeometry(QtCore.QRect(180 + c * 123, 440, 63, 51))
+            i.setText("")
+            i.setObjectName("h_icon_{}".format(c + 1))
+
+        self.update_weather()
+        self.show_daily_forecast()
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.update_weather()
-        self.frcs_label.lower()
 
     def update_city(self):
         self.label.setText(self.lineEdit.toPlainText())
@@ -266,103 +279,15 @@ class Ui_MainWindow(object):
         self.main_icon.setPixmap(pixmap)
         self.main_icon.resize(pixmap.width(), pixmap.height())
 
-        self.d_icon_1 = QtWidgets.QLabel(self.centralwidget)
-        self.d_icon_1.setGeometry(QtCore.QRect(180, 440, 63, 51))
-        self.d_icon_1.setText("")
-        self.d_icon_1.setObjectName("d_icon_1")
-        pixmap = self.choose_icon(dh='daily', x=1)
-        self.d_icon_1.setPixmap(pixmap)
-        self.d_icon_1.resize(pixmap.width(), pixmap.height())
+        for c, i in enumerate(self.daily_icons):
+            pixmap = self.choose_icon('daily', c+1)
+            i.setPixmap(pixmap)
+            i.resize(pixmap.width(), pixmap.height())
 
-        self.d_icon_2 = QtWidgets.QLabel(self.centralwidget)
-        self.d_icon_2.setGeometry(QtCore.QRect(305, 440, 63, 51))
-        self.d_icon_2.setText("")
-        self.d_icon_2.setObjectName("d_icon_2")
-        pixmap = self.choose_icon(dh='daily', x=2)
-        self.d_icon_2.setPixmap(pixmap)
-        self.d_icon_2.resize(pixmap.width(), pixmap.height())
-
-        self.d_icon_3 = QtWidgets.QLabel(self.centralwidget)
-        self.d_icon_3.setGeometry(QtCore.QRect(425, 440, 63, 51))
-        self.d_icon_3.setText("")
-        self.d_icon_3.setObjectName("d_icon_3")
-        pixmap = self.choose_icon(dh='daily', x=3)
-        self.d_icon_3.setPixmap(pixmap)
-        self.d_icon_3.resize(pixmap.width(), pixmap.height())
-
-        self.d_icon_4 = QtWidgets.QLabel(self.centralwidget)
-        self.d_icon_4.setGeometry(QtCore.QRect(550, 440, 63, 51))
-        self.d_icon_4.setText("")
-        self.d_icon_4.setObjectName("d_icon_4")
-        pixmap = self.choose_icon(dh='daily', x=4)
-        self.d_icon_4.setPixmap(pixmap)
-        self.d_icon_4.resize(pixmap.width(), pixmap.height())
-
-        self.d_icon_5 = QtWidgets.QLabel(self.centralwidget)
-        self.d_icon_5.setGeometry(QtCore.QRect(675, 440, 63, 51))
-        self.d_icon_5.setText("")
-        self.d_icon_5.setObjectName("d_icon_5")
-        pixmap = self.choose_icon(dh='daily', x=5)
-        self.d_icon_5.setPixmap(pixmap)
-        self.d_icon_5.resize(pixmap.width(), pixmap.height())
-
-        self.d_icon_6 = QtWidgets.QLabel(self.centralwidget)
-        self.d_icon_6.setGeometry(QtCore.QRect(795, 440, 63, 51))
-        self.d_icon_6.setText("")
-        self.d_icon_6.setObjectName("d_icon_6")
-        pixmap = self.choose_icon(dh='daily', x=6)
-        self.d_icon_6.setPixmap(pixmap)
-        self.d_icon_6.resize(pixmap.width(), pixmap.height())
-
-        self.h_icon_1 = QtWidgets.QLabel(self.centralwidget)
-        self.h_icon_1.setGeometry(QtCore.QRect(180, 440, 63, 51))
-        self.h_icon_1.setText("")
-        self.h_icon_1.setObjectName("h_icon_1")
-        pixmap = self.choose_icon(dh='hourly', x=1)
-        self.h_icon_1.setPixmap(pixmap)
-        self.h_icon_1.resize(pixmap.width(), pixmap.height())
-
-        self.h_icon_2 = QtWidgets.QLabel(self.centralwidget)
-        self.h_icon_2.setGeometry(QtCore.QRect(305, 440, 63, 51))
-        self.h_icon_2.setText("")
-        self.h_icon_2.setObjectName("h_icon_2")
-        pixmap = self.choose_icon(dh='hourly', x=2)
-        self.h_icon_2.setPixmap(pixmap)
-        self.h_icon_2.resize(pixmap.width(), pixmap.height())
-
-        self.h_icon_3 = QtWidgets.QLabel(self.centralwidget)
-        self.h_icon_3.setGeometry(QtCore.QRect(425, 440, 63, 51))
-        self.h_icon_3.setText("")
-        self.h_icon_3.setObjectName("h_icon_3")
-        pixmap = self.choose_icon(dh='hourly', x=3)
-        self.h_icon_3.setPixmap(pixmap)
-        self.h_icon_3.resize(pixmap.width(), pixmap.height())
-
-        self.h_icon_4 = QtWidgets.QLabel(self.centralwidget)
-        self.h_icon_4.setGeometry(QtCore.QRect(550, 440, 63, 51))
-        self.h_icon_4.setText("")
-        self.h_icon_4.setObjectName("h_icon_4")
-        pixmap = self.choose_icon(dh='hourly', x=4)
-        self.h_icon_4.setPixmap(pixmap)
-        self.h_icon_4.resize(pixmap.width(), pixmap.height())
-
-        self.h_icon_5 = QtWidgets.QLabel(self.centralwidget)
-        self.h_icon_5.setGeometry(QtCore.QRect(675, 440, 63, 51))
-        self.h_icon_5.setText("")
-        self.h_icon_5.setObjectName("h_icon_5")
-        pixmap = self.choose_icon(dh='hourly', x=5)
-        self.h_icon_5.setPixmap(pixmap)
-        self.h_icon_5.resize(pixmap.width(), pixmap.height())
-
-        self.h_icon_6 = QtWidgets.QLabel(self.centralwidget)
-        self.h_icon_6.setGeometry(QtCore.QRect(795, 440, 63, 51))
-        self.h_icon_6.setText("")
-        self.h_icon_6.setObjectName("h_icon_6")
-        pixmap = self.choose_icon(dh='hourly', x=6)
-        self.h_icon_6.setPixmap(pixmap)
-        self.h_icon_6.resize(pixmap.width(), pixmap.height())
-
-        self.show_daily_forecast()
+        for c, i in enumerate(self.hourly_icons):
+            pixmap = self.choose_icon('hourly', c+1)
+            i.setPixmap(pixmap)
+            i.resize(pixmap.width(), pixmap.height())
 
     def reload_location(self):
         try:
@@ -380,24 +305,17 @@ class Ui_MainWindow(object):
         #hide hourly
         self.hours_2.hide()
         self.h_temperature_2.hide()
-        self.h_icon_1.hide()
-        self.h_icon_2.hide()
-        self.h_icon_3.hide()
-        self.h_icon_4.hide()
-        self.h_icon_5.hide()
-        self.h_icon_6.hide()
+        for i in self.hourly_icons:
+            i.hide()
+
         #display daily
         self.max.show()
         self.min.show()
         self.dates_2.show()
         self.min_temperature_2.show()
         self.max_temperature_2.show()
-        self.d_icon_1.show()
-        self.d_icon_2.show()
-        self.d_icon_3.show()
-        self.d_icon_4.show()
-        self.d_icon_5.show()
-        self.d_icon_6.show()
+        for i in self.daily_icons:
+            i.show()
 
     def show_hourly_forecast(self):
         #hide daily
@@ -406,22 +324,14 @@ class Ui_MainWindow(object):
         self.dates_2.hide()
         self.min_temperature_2.hide()
         self.max_temperature_2.hide()
-        self.d_icon_1.hide()
-        self.d_icon_2.hide()
-        self.d_icon_3.hide()
-        self.d_icon_4.hide()
-        self.d_icon_5.hide()
-        self.d_icon_6.hide()
+        for i in self.daily_icons:
+            i.hide()
+
         #show hourly
         self.hours_2.show()
         self.h_temperature_2.show()
-        self.h_icon_1.show()
-        self.h_icon_2.show()
-        self.h_icon_3.show()
-        self.h_icon_4.show()
-        self.h_icon_5.show()
-        self.h_icon_6.show()
-
+        for i in self.hourly_icons:
+            i.show()
     def choose_icon(self, dh: str, x: int):
         t = time.localtime()
         hour = int(time.strftime("%H", t))
