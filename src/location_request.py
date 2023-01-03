@@ -9,7 +9,6 @@ base_geolocation_api_url = "https://www.googleapis.com/geolocation/v1/geolocate?
 base_geocoding_api_url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="    #adres url go google geocoding api
 api_key = "AIzaSyB1PUPXMdxyKLi3EdVufBQqWXbd-oIBxjs"                     #klucz api  (konto wnowogorski10@gmail.com)
 
-# zapytanie które zostanie wysłane na 'complete_geolocation_api_url'
 complete_geolocation_api_url = base_geolocation_api_url + api_key
 request = {'considerIp' : 'true'}
 class LocationApi:

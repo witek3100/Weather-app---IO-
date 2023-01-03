@@ -1,7 +1,7 @@
 {
    "plus_code": {
-      "compound_code": "W49W+Q3C Sk\u00f3rka, Poland",
-      "global_code": "9F3XW49W+Q3C"
+      "compound_code": "3W93+V3C Krak\u00f3w, Poland",
+      "global_code": "9F2X3W93+V3C"
    },
    "results": [
       {
@@ -14,31 +14,40 @@
                ]
             },
             {
-               "long_name": "\u0628\u0648\u0644\u0646\u062f\u0627",
-               "short_name": "\u0628\u0648\u0644\u0646\u062f\u0627",
+               "long_name": "Juliana Tokarskiego",
+               "short_name": "Juliana Tokarskiego",
                "types": [
                   "route"
                ]
             },
             {
-               "long_name": "\u0644\u0648\u0628\u0644\u0646",
-               "short_name": "\u0644\u0648\u0628\u0644\u0646",
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
                "types": [
                   "locality",
                   "political"
                ]
             },
             {
-               "long_name": "Powiat zgierski",
-               "short_name": "Powiat zgierski",
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
                "types": [
                   "administrative_area_level_2",
                   "political"
                ]
             },
             {
-               "long_name": "\u0141\u00f3dzkie",
-               "short_name": "\u0141\u00f3dzkie",
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
                "types": [
                   "administrative_area_level_1",
                   "political"
@@ -53,35 +62,35 @@
                ]
             },
             {
-               "long_name": "20-147",
-               "short_name": "20-147",
+               "long_name": "33-332",
+               "short_name": "33-332",
                "types": [
                   "postal_code"
                ]
             }
          ],
-         "formatted_address": "\u0628\u0648\u0644\u0646\u062f\u0627 1, 20-147 \u0644\u0648\u0628\u0644\u0646, Poland",
+         "formatted_address": "Juliana Tokarskiego 1, 33-332 Krak\u00f3w, Poland",
          "geometry": {
             "location": {
-               "lat": 51.9194541,
-               "lng": 19.1451396
+               "lat": 50.0695315,
+               "lng": 19.9026233
             },
             "location_type": "ROOFTOP",
             "viewport": {
                "northeast": {
-                  "lat": 51.9208030802915,
-                  "lng": 19.1464885802915
+                  "lat": 50.07088048029149,
+                  "lng": 19.9039722802915
                },
                "southwest": {
-                  "lat": 51.9181051197085,
-                  "lng": 19.1437906197085
+                  "lat": 50.06818251970849,
+                  "lng": 19.9012743197085
                }
             }
          },
-         "place_id": "ChIJb4DLUoGvG0cRm6_ngiltzHk",
+         "place_id": "ChIJRexVb7lbFkcR6CxBmBOoZZE",
          "plus_code": {
-            "compound_code": "W49W+Q3 Sk\u00f3rka, Poland",
-            "global_code": "9F3XW49W+Q3"
+            "compound_code": "3W93+R2 Krak\u00f3w, Poland",
+            "global_code": "9F2X3W93+R2"
          },
          "types": [
             "street_address"
@@ -90,31 +99,47 @@
       {
          "address_components": [
             {
-               "long_name": "W49W+Q3",
-               "short_name": "W49W+Q3",
+               "long_name": "1",
+               "short_name": "1",
                "types": [
-                  "plus_code"
+                  "street_number"
                ]
             },
             {
-               "long_name": "Sk\u00f3rka",
-               "short_name": "Sk\u00f3rka",
+               "long_name": "Juliana Tokarskiego",
+               "short_name": "Juliana Tokarskiego",
+               "types": [
+                  "route"
+               ]
+            },
+            {
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
                "types": [
                   "locality",
                   "political"
                ]
             },
             {
-               "long_name": "Zgierz County",
-               "short_name": "Zgierz County",
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
                "types": [
                   "administrative_area_level_2",
                   "political"
                ]
             },
             {
-               "long_name": "\u0141\u00f3d\u017a Voivodeship",
-               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
                "types": [
                   "administrative_area_level_1",
                   "political"
@@ -129,45 +154,312 @@
                ]
             },
             {
-               "long_name": "95-045",
-               "short_name": "95-045",
+               "long_name": "30-065",
+               "short_name": "30-065",
                "types": [
                   "postal_code"
                ]
             }
          ],
-         "formatted_address": "W49W+Q3 Sk\u00f3rka, Poland",
+         "formatted_address": "Juliana Tokarskiego 1, 30-065 Krak\u00f3w, Poland",
+         "geometry": {
+            "location": {
+               "lat": 50.0695315,
+               "lng": 19.9026233
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.07088048029149,
+                  "lng": 19.9039722802915
+               },
+               "southwest": {
+                  "lat": 50.06818251970849,
+                  "lng": 19.9012743197085
+               }
+            }
+         },
+         "place_id": "ChIJRexVb7lbFkcRdO65rZ_W1Bs",
+         "plus_code": {
+            "compound_code": "3W93+R2 Krak\u00f3w, Poland",
+            "global_code": "9F2X3W93+R2"
+         },
+         "types": [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Dom Studencki nr 3 \"Akropol\"",
+               "short_name": "Dom Studencki nr 3 \"Akropol\"",
+               "types": [
+                  "premise"
+               ]
+            },
+            {
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "33-332",
+               "short_name": "33-332",
+               "types": [
+                  "postal_code"
+               ]
+            }
+         ],
+         "formatted_address": "Dom Studencki nr 3 \"Akropol\", 33-332 Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 51.91950000000001,
-                  "lng": 19.14525
+                  "lat": 50.0697165,
+                  "lng": 19.9031209
                },
                "southwest": {
-                  "lat": 51.919375,
-                  "lng": 19.145125
+                  "lat": 50.0693525,
+                  "lng": 19.9027229
                }
             },
             "location": {
-               "lat": 51.9194381,
-               "lng": 19.145136
+               "lat": 50.0695339,
+               "lng": 19.9029121
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.0708834802915,
+                  "lng": 19.9042708802915
+               },
+               "southwest": {
+                  "lat": 50.0681855197085,
+                  "lng": 19.9015729197085
+               }
+            }
+         },
+         "place_id": "ChIJ4zbLZblbFkcRFWTkyHNxFfA",
+         "types": [
+            "premise"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "1",
+               "short_name": "1",
+               "types": [
+                  "street_number"
+               ]
+            },
+            {
+               "long_name": "Juliana Tokarskiego",
+               "short_name": "Juliana Tokarskiego",
+               "types": [
+                  "route"
+               ]
+            },
+            {
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "30-001",
+               "short_name": "30-001",
+               "types": [
+                  "postal_code"
+               ]
+            }
+         ],
+         "formatted_address": "Juliana Tokarskiego 1, 30-001 Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.0697663,
+                  "lng": 19.9027253
+               },
+               "southwest": {
+                  "lat": 50.0693274,
+                  "lng": 19.9025511
+               }
+            },
+            "location": {
+               "lat": 50.0695469,
+               "lng": 19.9026382
             },
             "location_type": "GEOMETRIC_CENTER",
             "viewport": {
                "northeast": {
-                  "lat": 51.9207864802915,
-                  "lng": 19.14653648029151
+                  "lat": 50.0708958302915,
+                  "lng": 19.90398718029151
                },
                "southwest": {
-                  "lat": 51.9180885197085,
-                  "lng": 19.1438385197085
+                  "lat": 50.0681978697085,
+                  "lng": 19.9012892197085
                }
             }
          },
-         "place_id": "GhIJIxnNJbD1SUAR5ngFoiclM0A",
+         "place_id": "ChIJl8P4ZblbFkcRsiXoIu5mUws",
+         "types": [
+            "route"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "3W93+V3",
+               "short_name": "3W93+V3",
+               "types": [
+                  "plus_code"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Lesser Poland Voivodeship",
+               "short_name": "Lesser Poland Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "30",
+               "short_name": "30",
+               "types": [
+                  "postal_code",
+                  "postal_code_prefix"
+               ]
+            }
+         ],
+         "formatted_address": "3W93+V3 Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.06975,
+                  "lng": 19.90275
+               },
+               "southwest": {
+                  "lat": 50.06962499999999,
+                  "lng": 19.902625
+               }
+            },
+            "location": {
+               "lat": 50.0696906,
+               "lng": 19.9026462
+            },
+            "location_type": "GEOMETRIC_CENTER",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.0710364802915,
+                  "lng": 19.9040364802915
+               },
+               "southwest": {
+                  "lat": 50.0683385197085,
+                  "lng": 19.9013385197085
+               }
+            }
+         },
+         "place_id": "GhIJWOsfn-sISUAR0ttE0hPnM0A",
          "plus_code": {
-            "compound_code": "W49W+Q3 Sk\u00f3rka, Poland",
-            "global_code": "9F3XW49W+Q3"
+            "compound_code": "3W93+V3 Krak\u00f3w, Poland",
+            "global_code": "9F2X3W93+V3"
          },
          "types": [
             "plus_code"
@@ -176,24 +468,116 @@
       {
          "address_components": [
             {
-               "long_name": "Gmina Parz\u0119czew",
-               "short_name": "Gmina Parz\u0119czew",
+               "long_name": "30-065",
+               "short_name": "30-065",
                "types": [
-                  "administrative_area_level_3",
+                  "postal_code"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
                   "political"
                ]
             },
             {
-               "long_name": "Zgierz County",
-               "short_name": "Zgierz County",
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
                "types": [
                   "administrative_area_level_2",
                   "political"
                ]
             },
             {
-               "long_name": "\u0141\u00f3d\u017a Voivodeship",
-               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "long_name": "Lesser Poland Voivodeship",
+               "short_name": "Lesser Poland Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            }
+         ],
+         "formatted_address": "30-065 Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.0700381,
+                  "lng": 19.9079682
+               },
+               "southwest": {
+                  "lat": 50.06264789999999,
+                  "lng": 19.9014238
+               }
+            },
+            "location": {
+               "lat": 50.0656397,
+               "lng": 19.9037764
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.0700381,
+                  "lng": 19.9079682
+               },
+               "southwest": {
+                  "lat": 50.06264789999999,
+                  "lng": 19.9014238
+               }
+            }
+         },
+         "place_id": "ChIJQd0fdbxbFkcRTl4DlVPAG3U",
+         "types": [
+            "postal_code"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Ma\u0142e B\u0142onia",
+               "short_name": "Ma\u0142e B\u0142onia",
+               "types": [
+                  "neighborhood",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
                "types": [
                   "administrative_area_level_1",
                   "political"
@@ -208,61 +592,78 @@
                ]
             },
             {
-               "long_name": "99",
-               "short_name": "99",
+               "long_name": "30",
+               "short_name": "30",
                "types": [
                   "postal_code",
                   "postal_code_prefix"
                ]
             }
          ],
-         "formatted_address": "Gmina Parz\u0119czew, Poland",
+         "formatted_address": "Ma\u0142e B\u0142onia, Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 52.0124874,
-                  "lng": 19.3112736
+                  "lat": 50.0723287,
+                  "lng": 19.9040789
                },
                "southwest": {
-                  "lat": 51.8773762,
-                  "lng": 19.1204452
+                  "lat": 50.0629177,
+                  "lng": 19.8872374
                }
             },
             "location": {
-               "lat": 51.9505614,
-               "lng": 19.20435
+               "lat": 50.0711362,
+               "lng": 19.8952438
             },
             "location_type": "APPROXIMATE",
             "viewport": {
                "northeast": {
-                  "lat": 52.0124874,
-                  "lng": 19.3112736
+                  "lat": 50.0723287,
+                  "lng": 19.9040789
                },
                "southwest": {
-                  "lat": 51.8773762,
-                  "lng": 19.1204452
+                  "lat": 50.0629177,
+                  "lng": 19.8872374
                }
             }
          },
-         "place_id": "ChIJmZ09JLavG0cR2LpKy6yMA4Q",
+         "place_id": "ChIJ_SIoar9bFkcRxWJoCQqZHRQ",
          "types": [
-            "administrative_area_level_3",
+            "neighborhood",
             "political"
          ]
       },
       {
          "address_components": [
             {
-               "long_name": "Zgierz County",
-               "short_name": "Zgierz County",
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
                "types": [
                   "administrative_area_level_2",
                   "political"
                ]
             },
             {
-               "long_name": "\u0141\u00f3d\u017a Voivodeship",
-               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "long_name": "Lesser Poland Voivodeship",
+               "short_name": "Lesser Poland Voivodeship",
                "types": [
                   "administrative_area_level_1",
                   "political"
@@ -277,43 +678,121 @@
                ]
             },
             {
-               "long_name": "99",
-               "short_name": "99",
+               "long_name": "30",
+               "short_name": "30",
                "types": [
                   "postal_code",
                   "postal_code_prefix"
                ]
             }
          ],
-         "formatted_address": "Zgierz County, Poland",
+         "formatted_address": "Krowodrza, Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 52.0369755,
-                  "lng": 19.8400275
+                  "lat": 50.0826614,
+                  "lng": 19.9473629
                },
                "southwest": {
-                  "lat": 51.7712183,
-                  "lng": 19.1204452
+                  "lat": 50.059157,
+                  "lng": 19.8872374
                }
             },
             "location": {
-               "lat": 51.9025569,
-               "lng": 19.4219463
+               "lat": 50.0729783,
+               "lng": 19.9155773
             },
             "location_type": "APPROXIMATE",
             "viewport": {
                "northeast": {
-                  "lat": 52.0369755,
-                  "lng": 19.8400275
+                  "lat": 50.0826614,
+                  "lng": 19.9473629
                },
                "southwest": {
-                  "lat": 51.7712183,
-                  "lng": 19.1204452
+                  "lat": 50.059157,
+                  "lng": 19.8872374
                }
             }
          },
-         "place_id": "ChIJO5GtD9q3G0cR1OwdO7qSpl4",
+         "place_id": "ChIJzbeBh6VbFkcRhtAbBNnM-xs",
+         "types": [
+            "political",
+            "sublocality",
+            "sublocality_level_1"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Lesser Poland Voivodeship",
+               "short_name": "Lesser Poland Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "30",
+               "short_name": "30",
+               "types": [
+                  "postal_code",
+                  "postal_code_prefix"
+               ]
+            }
+         ],
+         "formatted_address": "Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.1261349,
+                  "lng": 20.2173462
+               },
+               "southwest": {
+                  "lat": 49.9676651,
+                  "lng": 19.792238
+               }
+            },
+            "location": {
+               "lat": 50.044045,
+               "lng": 20.0059112
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.1261349,
+                  "lng": 20.2173462
+               },
+               "southwest": {
+                  "lat": 49.9676651,
+                  "lng": 19.792238
+               }
+            }
+         },
+         "place_id": "ChIJ0RhONcBEFkcRul2gceD7E48",
          "types": [
             "administrative_area_level_2",
             "political"
@@ -322,16 +801,194 @@
       {
          "address_components": [
             {
-               "long_name": "95",
-               "short_name": "95",
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_3",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "30",
+               "short_name": "30",
+               "types": [
+                  "postal_code",
+                  "postal_code_prefix"
+               ]
+            }
+         ],
+         "formatted_address": "Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.1261349,
+                  "lng": 20.2173462
+               },
+               "southwest": {
+                  "lat": 49.9676651,
+                  "lng": 19.792238
+               }
+            },
+            "location": {
+               "lat": 50.044045,
+               "lng": 20.0059112
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.1261349,
+                  "lng": 20.2173462
+               },
+               "southwest": {
+                  "lat": 49.9676651,
+                  "lng": 19.792238
+               }
+            }
+         },
+         "place_id": "ChIJ0RhONcBEFkcRZvikYv8lU6s",
+         "types": [
+            "administrative_area_level_3",
+            "political"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Lesser Poland Voivodeship",
+               "short_name": "Lesser Poland Voivodeship",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "30",
+               "short_name": "30",
+               "types": [
+                  "postal_code",
+                  "postal_code_prefix"
+               ]
+            }
+         ],
+         "formatted_address": "Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.1261259,
+                  "lng": 20.2174976
+               },
+               "southwest": {
+                  "lat": 49.9674054,
+                  "lng": 19.7922485
+               }
+            },
+            "location": {
+               "lat": 50.06465009999999,
+               "lng": 19.9449799
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.1261259,
+                  "lng": 20.2174976
+               },
+               "southwest": {
+                  "lat": 49.9674054,
+                  "lng": 19.7922485
+               }
+            }
+         },
+         "place_id": "ChIJ0RhONcBEFkcRv4pHdrW2a7Q",
+         "types": [
+            "locality",
+            "political"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "31",
+               "short_name": "31",
                "types": [
                   "postal_code",
                   "postal_code_prefix"
                ]
             },
             {
-               "long_name": "\u0141\u00f3d\u017a Voivodeship",
-               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Lesser Poland Voivodeship",
+               "short_name": "Lesser Poland Voivodeship",
                "types": [
                   "administrative_area_level_1",
                   "political"
@@ -346,35 +1003,35 @@
                ]
             }
          ],
-         "formatted_address": "Poland",
+         "formatted_address": "Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 52.0326677,
-                  "lng": 19.9969122
+                  "lat": 50.1260747,
+                  "lng": 20.2174879
                },
                "southwest": {
-                  "lat": 51.5139262,
-                  "lng": 19.0311816
+                  "lat": 49.9674055,
+                  "lng": 19.7922986
                }
             },
             "location": {
-               "lat": 51.8326334,
-               "lng": 19.5730733
+               "lat": 50.044045,
+               "lng": 20.0059112
             },
             "location_type": "APPROXIMATE",
             "viewport": {
                "northeast": {
-                  "lat": 52.0326677,
-                  "lng": 19.9969122
+                  "lat": 50.1260747,
+                  "lng": 20.2174879
                },
                "southwest": {
-                  "lat": 51.5139262,
-                  "lng": 19.0311816
+                  "lat": 49.9674055,
+                  "lng": 19.7922986
                }
             }
          },
-         "place_id": "ChIJ3ShKnlzLG0cRlvohr39Kofg",
+         "place_id": "ChIJpfxLNcBEFkcRu5f3MWgZOOA",
          "types": [
             "postal_code",
             "postal_code_prefix"
@@ -383,8 +1040,8 @@
       {
          "address_components": [
             {
-               "long_name": "\u0141\u00f3d\u017a Voivodeship",
-               "short_name": "\u0141\u00f3d\u017a Voivodeship",
+               "long_name": "Lesser Poland Voivodeship",
+               "short_name": "Lesser Poland Voivodeship",
                "types": [
                   "administrative_area_level_1",
                   "political"
@@ -399,35 +1056,35 @@
                ]
             }
          ],
-         "formatted_address": "\u0141\u00f3d\u017a Voivodeship, Poland",
+         "formatted_address": "Lesser Poland Voivodeship, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 52.3940809,
-                  "lng": 20.6592582
+                  "lat": 50.5205005,
+                  "lng": 21.4217415
                },
                "southwest": {
-                  "lat": 50.8432772,
-                  "lng": 18.0745215
+                  "lat": 49.1785791,
+                  "lng": 19.0831231
                }
             },
             "location": {
-               "lat": 51.4634771,
-               "lng": 19.1726974
+               "lat": 49.72253060000001,
+               "lng": 20.2503358
             },
             "location_type": "APPROXIMATE",
             "viewport": {
                "northeast": {
-                  "lat": 52.3940809,
-                  "lng": 20.6592582
+                  "lat": 50.5205005,
+                  "lng": 21.4217415
                },
                "southwest": {
-                  "lat": 50.8432772,
-                  "lng": 18.0745215
+                  "lat": 49.1785791,
+                  "lng": 19.0831231
                }
             }
          },
-         "place_id": "ChIJZWt_KnA3GkcRRhcejaLlBRY",
+         "place_id": "ChIJXe0Xc18WFkcRcMDkxa18AQE",
          "types": [
             "administrative_area_level_1",
             "political"
