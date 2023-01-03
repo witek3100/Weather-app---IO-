@@ -10,7 +10,12 @@ import subprocess
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        """
+        creating app GUI
+        :param MainWindow: Main app window QtWidget
+        """
 
+        """ size and background """
         MainWindow.setObjectName("Weather")
         MainWindow.resize(991, 719)
         MainWindow.setStyleSheet("QWidget#centralwidget{\n""background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 112, 255, 255), stop:1 rgba(255, 255, 255, 255));\n""border-color: rgb(30, 100, 190);\n""}")
@@ -19,17 +24,20 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
 
+        """ label displaying city name """
         self.city_label = QtWidgets.QLabel(self.centralwidget)
         self.city_label.setGeometry(QtCore.QRect(400, 60, 191, 81))
         self.city_label.setStyleSheet("font: 700 30pt \"Calibri\";\n""background-color: rgba(191, 64, 64, 2);\n""color: rgb(243, 243, 243);")
         self.city_label.setObjectName("city_label")
 
+        """ upper bar """
         self.upper_bar = QtWidgets.QLabel(self.centralwidget)
         self.upper_bar.setGeometry(QtCore.QRect(-10, 0, 1001, 51))
         self.upper_bar.setStyleSheet("background-color:rgb(30, 100, 190)")
         self.upper_bar.setText("")
         self.upper_bar.setObjectName("label_2")
 
+        """ buttons """
         self.settings_button = QtWidgets.QPushButton(self.centralwidget)
         self.settings_button.setGeometry(QtCore.QRect(10, 10, 121, 31))
         self.settings_button.setStyleSheet("background-color:rgb(100,200,250)")
@@ -48,24 +56,31 @@ class Ui_MainWindow(object):
         self.update_weather_button.setObjectName("pushButton_3")
         self.update_weather_button.setText('Update weather')
 
+        self.search_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: update_city())
+        self.search_button.setGeometry(QtCore.QRect(950, 10, 31, 31))
+        self.search_button.setStyleSheet("background-color:rgb(100,200,250)")
+        self.search_button.setText("")
+        self.search_button.setObjectName("pushButton_4")
+
+        self.Hourly_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_hourly_forecast())
+        self.Hourly_button.setGeometry(QtCore.QRect(60, 470, 83, 29))
+        self.Hourly_button.setStyleSheet("background-color:rgb(100,200,250)")
+        self.Hourly_button.setObjectName("Hourly_button")
+        self.Hourly_button.setText('Hourly')
+
+        self.Daily_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_daily_forecast())
+        self.Daily_button.setGeometry(QtCore.QRect(60, 510, 83, 29))
+        self.Daily_button.setStyleSheet("background-color:rgb(100,200,250)")
+        self.Daily_button.setObjectName("Daily_button")
+        self.Daily_button.setText('Daily')
+
+
         self.search_bar = QtWidgets.QTextEdit(self.centralwidget, placeholderText=" search city")
         self.search_bar.setGeometry(QtCore.QRect(650, 10, 291, 31))
         self.search_bar.setStyleSheet("background-color:rgb(130,200,250)")
         self.search_bar.setObjectName("lineEdit")
 
-        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: update_city())
-        self.pushButton_4.setGeometry(QtCore.QRect(950, 10, 31, 31))
-        self.pushButton_4.setStyleSheet("background-color:rgb(100,200,250)")
-        self.pushButton_4.setText("")
-        self.pushButton_4.setObjectName("pushButton_4")
-
-        self.current_location_label = QtWidgets.QLabel(self.centralwidget)
-        self.current_location_label.setGeometry(QtCore.QRect(0, 700, 991, 21))
-        self.current_location_label.setStyleSheet("background-color:rgba(30, 100, 190, 100);\n""font: 300 9pt \"Bahnschrift Light\";")
-        self.current_location_label.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.current_location_label.setObjectName("label_4")
-        self.current_location_label.setText(self.current_location_text)
-
+        """ current weather data labels """
         self.temperature_label = QtWidgets.QLabel(self.centralwidget)
         self.temperature_label.setGeometry(QtCore.QRect(370, 130, 221, 101))
         self.temperature_label.setStyleSheet("font: 300 50pt \"Segoe UI Variable Display Light\";\n""color:rgb(255,255,255)")
@@ -93,12 +108,19 @@ class Ui_MainWindow(object):
         self.current_data_label2.setObjectName("current_data_label2")
         self.current_data_label2.setText("Feels Like 24°C      Precipitation None        Humidity 80%")
 
-        self.actionChange_units = QtWidgets.QAction(MainWindow)
-        self.actionChange_units.setObjectName("actionChange_units")
-        self.actiontime_zone = QtWidgets.QAction(MainWindow)
-        self.actiontime_zone.setObjectName("actiontime_zone")
+        self.main_icon = QtWidgets.QLabel(self.centralwidget)
+        self.main_icon.setGeometry(QtCore.QRect(230, 120, 141, 121))
+        self.main_icon.setText("")
+        self.main_icon.setObjectName("main_icon")
 
-        ##### FORECAST #####
+        self.current_location_label = QtWidgets.QLabel(self.centralwidget)
+        self.current_location_label.setGeometry(QtCore.QRect(0, 700, 991, 21))
+        self.current_location_label.setStyleSheet("background-color:rgba(30, 100, 190, 100);\n""font: 300 9pt \"Bahnschrift Light\";")
+        self.current_location_label.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.current_location_label.setObjectName("label_4")
+        self.current_location_label.setText(self.current_location_text)
+
+        """ forecast data labels """
         self.frcs_label = QtWidgets.QLabel(self.centralwidget)
         self.frcs_label.setGeometry(QtCore.QRect(50, 410, 891, 221))
         self.frcs_label.setStyleSheet("background-color:rgba(30, 100, 190, 150);\n"
@@ -106,6 +128,20 @@ class Ui_MainWindow(object):
                                       "border-radius:20px;")
         self.frcs_label.setText("")
         self.frcs_label.setObjectName("frcs_label")
+        self.frcs_label.lower()
+
+        self.forecast = QtWidgets.QLabel(self.centralwidget)
+        self.forecast.setGeometry(QtCore.QRect(60, 430, 101, 31))
+        self.forecast.setStyleSheet("font: 15pt \"Calibri\";\n""color:rgb(255, 255, 255)")
+        self.forecast.setObjectName("forecast")
+        self.forecast.setText('Forecast')
+
+        self.hours = QtWidgets.QLabel(self.centralwidget)
+        self.hours.setGeometry(QtCore.QRect(130, 530, 811, 20))
+        self.hours.setStyleSheet("color:rgb(255,255,255);")
+        self.hours.setObjectName("hours_2")
+        self.hours.setText("                  3:00                        7:00                       11:00"
+                             "                       15:00                       19:00                       23:00")
 
         self.hourly_temperatures = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
         for c, i in enumerate(self.hourly_temperatures):
@@ -113,27 +149,16 @@ class Ui_MainWindow(object):
             i.setStyleSheet("font: 700 9pt \"Segoe UI\";""color: rgb(255,255,255)")
             i.setObjectName("hourly_temperature_{}".format(c+1))
 
-        self.hours_2 = QtWidgets.QLabel(self.centralwidget)
-        self.hours_2.setGeometry(QtCore.QRect(130, 530, 811, 20))
-        self.hours_2.setStyleSheet("color:rgb(255,255,255);")
-        self.hours_2.setObjectName("hours_2")
+        self.hourly_icons = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
+        for c, i in enumerate(self.hourly_icons):
+            i.setGeometry(QtCore.QRect(180 + c * 123, 440, 63, 51))
+            i.setText("")
+            i.setObjectName("h_icon_{}".format(c + 1))
 
-        self.Hourly_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_hourly_forecast())
-        self.Hourly_button.setGeometry(QtCore.QRect(60, 470, 83, 29))
-        self.Hourly_button.setStyleSheet("background-color:rgb(100,200,250)")
-        self.Hourly_button.setObjectName("Hourly_button")
-        self.Hourly_button.setText('Hourly')
-
-        self.Daily_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_daily_forecast())
-        self.Daily_button.setGeometry(QtCore.QRect(60, 510, 83, 29))
-        self.Daily_button.setStyleSheet("background-color:rgb(100,200,250)")
-        self.Daily_button.setObjectName("Daily_button")
-        self.Daily_button.setText('Daily')
-
-        self.dates_2 = QtWidgets.QLabel(self.centralwidget)
-        self.dates_2.setGeometry(QtCore.QRect(130, 530, 738, 20))
-        self.dates_2.setStyleSheet("color:rgb(255,255,255);")
-        self.dates_2.setObjectName("dates_2")
+        self.dates = QtWidgets.QLabel(self.centralwidget)
+        self.dates.setGeometry(QtCore.QRect(130, 530, 738, 20))
+        self.dates.setStyleSheet("color:rgb(255,255,255);")
+        self.dates.setObjectName("dates_2")
 
         self.max_temperatures = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
         for c, i in enumerate(self.max_temperatures):
@@ -159,28 +184,16 @@ class Ui_MainWindow(object):
         self.max.setObjectName("max")
         self.max.setText('MAX')
 
-        self.forecast = QtWidgets.QLabel(self.centralwidget)
-        self.forecast.setGeometry(QtCore.QRect(60, 430, 101, 31))
-        self.forecast.setStyleSheet("font: 15pt \"Calibri\";\n""color:rgb(255, 255, 255)")
-        self.forecast.setObjectName("forecast")
-        self.forecast.setText('Forecast')
-
-        self.main_icon = QtWidgets.QLabel(self.centralwidget)
-        self.main_icon.setGeometry(QtCore.QRect(230, 120, 141, 121))
-        self.main_icon.setText("")
-        self.main_icon.setObjectName("main_icon")
-
-        self.hourly_icons = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
-        for c, i in enumerate(self.hourly_icons):
-            i.setGeometry(QtCore.QRect(180 + c * 123, 440, 63, 51))
-            i.setText("")
-            i.setObjectName("h_icon_{}".format(c + 1))
-
         self.daily_icons = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
         for c, i in enumerate(self.daily_icons):
             i.setGeometry(QtCore.QRect(180 + c * 123, 440, 63, 51))
             i.setText("")
             i.setObjectName("h_icon_{}".format(c + 1))
+
+        self.actionChange_units = QtWidgets.QAction(MainWindow)
+        self.actionChange_units.setObjectName("actionChange_units")
+        self.actiontime_zone = QtWidgets.QAction(MainWindow)
+        self.actiontime_zone.setObjectName("actiontime_zone")
 
         self.update_weather()
         self.show_daily_forecast()
@@ -193,6 +206,11 @@ class Ui_MainWindow(object):
         self.label.setText(self.lineEdit.toPlainText())
 
     def update_weather(self):
+        """
+        updates lables displaying weather information
+        """
+
+        """ get current weather """
         WeatherApi.get_weather()
         with open(os.path.relpath("weather_data.json")) as wth_file:
             self.weather = json.load(wth_file)
@@ -223,6 +241,9 @@ class Ui_MainWindow(object):
         if snow > 0:
             self.wth.setText("Snow")
             percipation = snow
+        pixmap2 = self.choose_icon('hourly', 0, small=False)
+        self.main_icon.setPixmap(pixmap2)
+        self.main_icon.resize(pixmap2.width(), pixmap2.height())
 
         """ set current_data_label1 """
         wind = self.weather["hourly"]["windspeed_10m"][hour]
@@ -236,7 +257,7 @@ class Ui_MainWindow(object):
         self.current_data_label2.setText("Feels Like {}°C      Precipitation {} mm       Humidity {}%".format(feels_like, percipation, humidity))
 
         """ set dates label"""
-        self.dates_2.setText("                 {}                       {}                       {}"
+        self.dates.setText("                 {}                       {}                       {}"
                             "                       {}                       {}                       {}"
                             .format(self.weather['daily']['time'][1][8:10] + "." + self.weather['daily']['time'][1][5:7],
                                     self.weather['daily']['time'][2][8:10] + "." + self.weather['daily']['time'][2][5:7],
@@ -244,12 +265,6 @@ class Ui_MainWindow(object):
                                     self.weather['daily']['time'][4][8:10] + "." + self.weather['daily']['time'][4][5:7],
                                     self.weather['daily']['time'][5][8:10] + "." + self.weather['daily']['time'][5][5:7],
                                     self.weather['daily']['time'][6][8:10] + "." + self.weather['daily']['time'][6][5:7]))
-
-        """ set hours label """
-        self.hours_2.setText("                  3:00                        7:00                       11:00"
-                             "                       15:00                       19:00                       23:00")
-
-
 
         """ set hourly temperature labels """
         for c, i in enumerate(self.hourly_temperatures):
@@ -263,23 +278,23 @@ class Ui_MainWindow(object):
         for c, i in enumerate(self.min_temperatures):
             i.setText("{}°C".format(int(self.weather['daily']['temperature_2m_min'][c+1])))
 
-
+        """ set daily forecast icons """
         for c, i in enumerate(self.daily_icons):
             pixmap = self.choose_icon('daily', c+1)
             i.setPixmap(pixmap)
             i.resize(pixmap.width(), pixmap.height())
 
+        """ set hourly forecast icons """
         for c, i in enumerate(self.hourly_icons):
             pixmap = self.choose_icon('hourly', 3+4*c)
             i.setPixmap(pixmap)
             i.resize(pixmap.width(), pixmap.height())
 
-        pixmap2 = self.choose_main_icon()
-        self.main_icon.setPixmap(pixmap2)
-        self.main_icon.resize(pixmap2.width(), pixmap2.height())
-
-
     def reload_location(self):
+        """
+        reloads location data by running script from
+         location_request and reading data from loc.json
+        """
         try:
             LocationApi.get_location()
             with open(os.path.relpath("loc.json")) as loc_file:
@@ -292,17 +307,19 @@ class Ui_MainWindow(object):
             self.current_location_text = "CURRENT LOCATION: {}   {}".format(self.lat, self.lon)
 
     def show_daily_forecast(self):
-        #hide hourly
-        self.hours_2.hide()
+        """
+        shows daily forecast and hides hourly
+        """
+        """hide hourly"""
+        self.hours.hide()
         for i in self.hourly_temperatures:
             i.hide()
         for i in self.hourly_icons:
             i.hide()
-
-        #display daily
+        """show daily"""
         self.max.show()
         self.min.show()
-        self.dates_2.show()
+        self.dates.show()
         for i in self.min_temperatures:
             i.show()
         for i in self.max_temperatures:
@@ -311,24 +328,34 @@ class Ui_MainWindow(object):
             i.show()
 
     def show_hourly_forecast(self):
-        #hide daily
+        """
+        shows hourly forecast and hides daily
+        """
+        """hide daily"""
         self.max.hide()
         self.min.hide()
-        self.dates_2.hide()
+        self.dates.hide()
         for i in self.min_temperatures:
             i.hide()
         for i in self.max_temperatures:
             i.hide()
         for i in self.daily_icons:
             i.hide()
-
-        #show hourly
-        self.hours_2.show()
+        """show hourly"""
+        self.hours.show()
         for i in self.hourly_temperatures:
             i.show()
         for i in self.hourly_icons:
             i.show()
-    def choose_icon(self, dh: str, x: int):
+    def choose_icon(self, dh, x, small=True):
+        """
+        function choose icon from icons folder for icon label pixmap
+        :param dh: daily or hourly forecast
+        :param x: position of weather data in json file
+        :param small: if true returns small icon (for forecast labels) else returns normal icon (for main icon label)
+        :return:
+        """
+        add_str = "_small" if small else ""
         if dh == "daily":
             if self.weather[dh]["precipitation_hours"][x] < 3:
                 return QtGui.QPixmap('../icons/sun_small.png')
@@ -338,32 +365,13 @@ class Ui_MainWindow(object):
                 return QtGui.QPixmap('../icons/rain_day_small.png')
         if dh == "hourly":
             if self.weather[dh]["precipitation"][x] > 0:
-                return QtGui.QPixmap('../icons/rain_day_small.png')
+                return QtGui.QPixmap('../icons/rain_day{}.png'.format(add_str))
             if self.weather[dh]["cloudcover"][x] < 20:
-                return QtGui.QPixmap('../icons/sun_small.png')
+                return QtGui.QPixmap('../icons/sun{}.png'.format(add_str))
             if 20 <= self.weather[dh]["cloudcover"][x] < 80:
-                return QtGui.QPixmap('../icons/few_clouds_small.png')
+                return QtGui.QPixmap('../icons/few_clouds{}.png'.format(add_str))
             if self.weather[dh]["cloudcover"][x] >= 80:
-                return QtGui.QPixmap('../icons/ovc_clouds_small.png')
-
-    def choose_main_icon(self):
-        t = time.localtime()
-        hour = int(time.strftime("%H", t))
-
-        if self.weather["hourly"]["precipitation"][hour] > 0:
-            return QtGui.QPixmap('../icons/rain_day.png')
-        elif self.weather["hourly"]["cloudcover"][hour] < 20:
-            if 6 < hour < 20:
-                return QtGui.QPixmap('../icons/sun.png')
-            else:
-                return QtGui.QPixmap('..icons/moon.png')
-        elif 20 <= self.weather["hourly"]["cloudcover"][hour] < 80:
-            if 6 < hour < 20:
-                return QtGui.QPixmap('../icons/few_clouds.png')
-            else:
-                return QtGui.QPixmap('..icons/few_clouds_night.png')
-        elif 80 <= self.weather["hourly"]["cloudcover"][hour]:
-            return QtGui.QPixmap('../icons/ovc_clouds.png')
+                return QtGui.QPixmap('../icons/ovc_clouds{}.png'.format(add_str))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
