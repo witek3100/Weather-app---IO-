@@ -74,7 +74,6 @@ class Ui_MainWindow(object):
         self.Daily_button.setObjectName("Daily_button")
         self.Daily_button.setText('Daily')
 
-
         self.search_bar = QtWidgets.QTextEdit(self.centralwidget, placeholderText=" search city")
         self.search_bar.setGeometry(QtCore.QRect(650, 10, 291, 31))
         self.search_bar.setStyleSheet("background-color:rgb(130,200,250)")
@@ -347,6 +346,7 @@ class Ui_MainWindow(object):
             i.show()
         for i in self.hourly_icons:
             i.show()
+            
     def choose_icon(self, dh, x, small=True):
         """
         function choose icon from icons folder for icon label pixmap
