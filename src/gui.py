@@ -26,8 +26,7 @@ class Ui_MainWindow(object):
 
         """ label displaying city name """
         self.city_label = QtWidgets.QLabel(self.centralwidget)
-        self.city_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.city_label.setGeometry(QtCore.QRect(330, 60, 301, 81))
+        self.city_label.setGeometry(QtCore.QRect(400, 60, 191, 81))
         self.city_label.setStyleSheet("font: 700 30pt \"Calibri\";\n""background-color: rgba(191, 64, 64, 2);\n""color: rgb(243, 243, 243);")
         self.city_label.setObjectName("city_label")
 
@@ -57,6 +56,12 @@ class Ui_MainWindow(object):
         self.update_weather_button.setObjectName("pushButton_3")
         self.update_weather_button.setText('Update weather')
 
+        self.search_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: update_city())
+        self.search_button.setGeometry(QtCore.QRect(950, 10, 31, 31))
+        self.search_button.setStyleSheet("background-color:rgb(100,200,250)")
+        self.search_button.setText("")
+        self.search_button.setObjectName("pushButton_4")
+
         self.Hourly_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_hourly_forecast())
         self.Hourly_button.setGeometry(QtCore.QRect(60, 470, 83, 29))
         self.Hourly_button.setStyleSheet("background-color:rgb(100,200,250)")
@@ -69,19 +74,10 @@ class Ui_MainWindow(object):
         self.Daily_button.setObjectName("Daily_button")
         self.Daily_button.setText('Daily')
 
-        self.search_bar = QtWidgets.QLineEdit(self.centralwidget, placeholderText= " search city")
+        self.search_bar = QtWidgets.QTextEdit(self.centralwidget, placeholderText=" search city")
         self.search_bar.setGeometry(QtCore.QRect(650, 10, 291, 31))
         self.search_bar.setStyleSheet("background-color:rgb(130,200,250)")
         self.search_bar.setObjectName("lineEdit")
-        cities = {"Kraków" : [50.3434300, 30.1589312], "Warszawa": [50.3434300, 30.1589312], "Gdańsk":3, "Katowice":4, "Rzeszów":5 }
-        completer = QtWidgets.QCompleter(cities)
-        self.search_bar.setCompleter(completer)
-
-        self.search_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.update_city())
-        self.search_button.setGeometry(QtCore.QRect(950, 10, 31, 31))
-        self.search_button.setStyleSheet("background-color:rgb(100,200,250)")
-        self.search_button.setText("")
-        self.search_button.setObjectName("pushButton_4")
 
         """ current weather data labels """
         self.temperature_label = QtWidgets.QLabel(self.centralwidget)
@@ -204,13 +200,15 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+
     def update_city(self):
-        self.city_label.setText(self.search_bar.text())
+        self.label.setText(self.lineEdit.toPlainText())
 
     def update_weather(self):
         """
         updates lables displaying weather information
         """
+
         """ get current weather """
         WeatherApi.get_weather()
         with open(os.path.relpath("weather_data.json")) as wth_file:
@@ -348,7 +346,7 @@ class Ui_MainWindow(object):
             i.show()
         for i in self.hourly_icons:
             i.show()
-
+            
     def choose_icon(self, dh, x, small=True):
         """
         function choose icon from icons folder for icon label pixmap
