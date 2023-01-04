@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
 
         """ size and background """
         MainWindow.setObjectName("Weather")
-        MainWindow.resize(991, 719)
+        MainWindow.setFixedSize(991, 719)
         MainWindow.setStyleSheet("QWidget#centralwidget{\n""background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 112, 255, 255), stop:1 rgba(255, 255, 255, 255));\n""border-color: rgb(30, 100, 190);\n""}")
 
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
 
         """ label displaying city name """
         self.city_label = QtWidgets.QLabel(self.centralwidget)
-        self.city_label.setGeometry(QtCore.QRect(330, 60, 300, 81))
+        self.city_label.setGeometry(QtCore.QRect(180, 60, 600, 81))
         self.city_label.setAlignment(QtCore.Qt.AlignCenter)
         self.city_label.setStyleSheet("font: 700 30pt \"Calibri\";\n""background-color: rgba(191, 64, 64, 2);\n""color: rgb(243, 243, 243);")
         self.city_label.setObjectName("city_label")
@@ -95,7 +95,8 @@ class Ui_MainWindow(object):
         self.search_button.setGeometry(QtCore.QRect(950, 10, 31, 31))
         self.search_button.setStyleSheet("background-color:rgb(100,200,250)")
         self.search_button.setText("")
-        self.search_button.setObjectName("pushButton_4")
+        self.search_button.setObjectName("seach_button")
+        self.search_button.setIcon(QtGui.QIcon('../icons/search_button_icon.png'))
 
         """ current weather data labels """
         self.temperature_label = QtWidgets.QLabel(self.centralwidget)
@@ -346,6 +347,7 @@ class Ui_MainWindow(object):
             self.current_location_text = "UNABLE TO GET YOUR LOCATION"
         else:
             self.current_location_text = "YOUR CURRENT LOCATION: {}   {}".format(self.lat, self.lon)
+
 
     def show_daily_forecast(self):
         """
