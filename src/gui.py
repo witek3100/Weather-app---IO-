@@ -12,7 +12,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         """
         creating app GUI
-        :param MainWindow: Main app window QtWidget
+        :param MainWindow: Main window QtWidget
         """
 
         """ size and background """
@@ -24,9 +24,25 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
 
+        self.cities = {
+            "Wrocław": [51.107883, 17.038538],
+            "Rybnik": [50.096798, 18.542936],
+            "Opole": [50.671062, 17.926126],
+            "Elblag": [54.156059, 19.404490],
+            "Łódź": [51.759445, 19.457216],
+            "Starogard Gdański": [53.966187, 18.531017],
+            "Kolobrzeg": [54.175919, 15.583267],
+            "Lublin": [51.246452, 22.568445],
+            "Chelm": [51.143124, 23.471199],
+            "Warszawa": [52.237049, 21.017532],
+            "Katowice": [50.270908, 19.039993],
+            "Tychy": [50.124981, 19.009438],
+            "Gdańsk": [54.372158, 18.638306]}
+
         """ label displaying city name """
         self.city_label = QtWidgets.QLabel(self.centralwidget)
-        self.city_label.setGeometry(QtCore.QRect(400, 60, 191, 81))
+        self.city_label.setGeometry(QtCore.QRect(330, 60, 300, 81))
+        self.city_label.setAlignment(QtCore.Qt.AlignCenter)
         self.city_label.setStyleSheet("font: 700 30pt \"Calibri\";\n""background-color: rgba(191, 64, 64, 2);\n""color: rgb(243, 243, 243);")
         self.city_label.setObjectName("city_label")
 
@@ -50,17 +66,11 @@ class Ui_MainWindow(object):
         self.reload_location_button.setObjectName("pushButton_2")
         self.reload_location_button.setText('Reload location')
 
-        self.update_weather_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.update_weather())
+        self.update_weather_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.update_weather(self.lat, self.lon))
         self.update_weather_button.setGeometry(QtCore.QRect(270, 10, 121, 31))
         self.update_weather_button.setStyleSheet("background-color:rgb(100,200,250)")
         self.update_weather_button.setObjectName("pushButton_3")
         self.update_weather_button.setText('Update weather')
-
-        self.search_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: update_city())
-        self.search_button.setGeometry(QtCore.QRect(950, 10, 31, 31))
-        self.search_button.setStyleSheet("background-color:rgb(100,200,250)")
-        self.search_button.setText("")
-        self.search_button.setObjectName("pushButton_4")
 
         self.Hourly_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_hourly_forecast())
         self.Hourly_button.setGeometry(QtCore.QRect(60, 470, 83, 29))
@@ -74,10 +84,18 @@ class Ui_MainWindow(object):
         self.Daily_button.setObjectName("Daily_button")
         self.Daily_button.setText('Daily')
 
-        self.search_bar = QtWidgets.QTextEdit(self.centralwidget, placeholderText=" search city")
+        self.search_bar = QtWidgets.QLineEdit(self.centralwidget, placeholderText=" search city")
         self.search_bar.setGeometry(QtCore.QRect(650, 10, 291, 31))
+        completer = QtWidgets.QCompleter(self.cities)
+        self.search_bar.setCompleter(completer)
         self.search_bar.setStyleSheet("background-color:rgb(130,200,250)")
         self.search_bar.setObjectName("lineEdit")
+
+        self.search_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_weather_for_city())
+        self.search_button.setGeometry(QtCore.QRect(950, 10, 31, 31))
+        self.search_button.setStyleSheet("background-color:rgb(100,200,250)")
+        self.search_button.setText("")
+        self.search_button.setObjectName("pushButton_4")
 
         """ current weather data labels """
         self.temperature_label = QtWidgets.QLabel(self.centralwidget)
@@ -194,23 +212,47 @@ class Ui_MainWindow(object):
         self.actiontime_zone = QtWidgets.QAction(MainWindow)
         self.actiontime_zone.setObjectName("actiontime_zone")
 
-        self.update_weather()
+        self.update_weather(self.lat, self.lon)
         self.show_daily_forecast()
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        self.cities = {
+"Wrocław" :[51.107883,17.038538],
+"Rybnik" :[50.096798,18.542936],
+"Opole" :[50.671062,17.926126],
+"Elblag" :[54.156059,19.404490],
+"Łódź" :[51.759445,19.457216],
+"Starogard Gdański" :[53.966187,18.531017],
+"Kolobrzeg" :[54.175919,15.583267],
+"Lublin" :[51.246452,22.568445],
+"Chelm" :[51.143124,23.471199],
+"Warszawa" :[52.237049,21.017532],
+"Katowice" : [50.270908,19.039993],
+"Tychy" : [50.124981,19.009438],
+"Gdańsk" : [54.372158,18.638306]}
 
-    def update_city(self):
-        self.label.setText(self.lineEdit.toPlainText())
+    def show_weather_for_city(self):
+        city = self.search_bar.text()
+        if not city in self.cities:
+            self.current_location_label.setText("Unable to find this city...")
+            return
+        self.city_label.setText(city)
+        self.current_location_label.setText("{} : {} {}".format(city, self.cities[city][0], self.cities[city][1]))
+        self.update_weather(self.cities[city][0], self.cities[city][1])
 
-    def update_weather(self):
+
+
+    def update_weather(self, lat, lon):
         """
         updates lables displaying weather information
+        :param lat
+        :param lon
         """
 
         """ get current weather """
-        WeatherApi.get_weather()
+        WeatherApi.get_weather(lat, lon)
         with open(os.path.relpath("weather_data.json")) as wth_file:
             self.weather = json.load(wth_file)
         t = time.localtime()
@@ -303,7 +345,7 @@ class Ui_MainWindow(object):
         except:
             self.current_location_text = "UNABLE TO GET YOUR LOCATION"
         else:
-            self.current_location_text = "CURRENT LOCATION: {}   {}".format(self.lat, self.lon)
+            self.current_location_text = "YOUR CURRENT LOCATION: {}   {}".format(self.lat, self.lon)
 
     def show_daily_forecast(self):
         """
@@ -376,7 +418,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Weather"))
-        self.city_label.setText(_translate("MainWindow", "Kraków"))
+        self.city_label.setText(_translate("MainWindow", "Your Location"))
 
 
 if __name__ == "__main__":

@@ -7,14 +7,12 @@ import os
 
 class WeatherApi:
     @staticmethod
-    def get_weather():
-        # z loc.json odczytujemy lokalizacje dla jakiej pobieramy informacje
-        with open(os.path.relpath("loc.json")) as loc_file:
-            loc = json.load(loc_file)
-
-        lat = loc["results"][1]['geometry']['location']['lat']
-        lon = loc["results"][1]['geometry']['location']['lng']
-
+    def get_weather(lat, lon):
+        """
+        fetching weather data from open-meteo api to weather_data.json
+        :param lat: latitude of location
+        :param lon: longtitude of location
+        """
         # adres url open meteo api
         API_URL = f'https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m,relativehumidity_2m,' \
                   'dewpoint_2m,apparent_temperature,precipitation,rain,showers,snowfall,snow_depth,freezinglevel_height,weatherc' \
