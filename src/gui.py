@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from weather_data_request import WeatherApi
 from location_request import LocationApi
+from cities_dict import cities
 import time
 import os
 import json
@@ -24,7 +25,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
 
-        self.cities = {
+        cities = {
             "Wrocław": [51.107883, 17.038538],
             "Rybnik": [50.096798, 18.542936],
             "Opole": [50.671062, 17.926126],
@@ -71,7 +72,7 @@ class Ui_MainWindow(object):
         self.update_weather_button.setGeometry(QtCore.QRect(270, 10, 121, 31))
         self.update_weather_button.setStyleSheet("background-color:rgb(100,200,250)")
         self.update_weather_button.setObjectName("pushButton_3")
-        self.update_weather_button.setText('Update weather')
+        self.update_weather_button.setText('Your Location')
 
         self.Hourly_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.show_hourly_forecast())
         self.Hourly_button.setGeometry(QtCore.QRect(60, 470, 83, 29))
@@ -87,7 +88,7 @@ class Ui_MainWindow(object):
 
         self.search_bar = QtWidgets.QLineEdit(self.centralwidget, placeholderText=" search city")
         self.search_bar.setGeometry(QtCore.QRect(650, 10, 291, 31))
-        completer = QtWidgets.QCompleter(self.cities)
+        completer = QtWidgets.QCompleter(cities)
         self.search_bar.setCompleter(completer)
         self.search_bar.setStyleSheet("background-color:rgb(130,200,250)")
         self.search_bar.setObjectName("lineEdit")
@@ -220,30 +221,14 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.cities = {
-"Wrocław" :[51.107883,17.038538],
-"Rybnik" :[50.096798,18.542936],
-"Opole" :[50.671062,17.926126],
-"Elblag" :[54.156059,19.404490],
-"Łódź" :[51.759445,19.457216],
-"Starogard Gdański" :[53.966187,18.531017],
-"Kolobrzeg" :[54.175919,15.583267],
-"Lublin" :[51.246452,22.568445],
-"Chelm" :[51.143124,23.471199],
-"Warszawa" :[52.237049,21.017532],
-"Katowice" : [50.270908,19.039993],
-"Tychy" : [50.124981,19.009438],
-"Gdańsk" : [54.372158,18.638306],
-"Lizbona" : [50.000, 0.00]}
-
     def show_weather_for_city(self):
         city = self.search_bar.text()
-        if not city in self.cities:
+        if not city in cities:
             self.current_location_label.setText("Unable to find this city...")
             return
         self.city_label.setText(city)
-        self.current_location_label.setText("{} : {} {}".format(city, self.cities[city][0], self.cities[city][1]))
-        self.update_weather(self.cities[city][0], self.cities[city][1])
+        self.current_location_label.setText("{} : {} {}".format(city, cities[city][0], cities[city][1]))
+        self.update_weather(cities[city][0], cities[city][1])
 
 
 
