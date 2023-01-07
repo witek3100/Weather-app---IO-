@@ -10,18 +10,14 @@
 <pre>
 ├ src                           #folder źródłowy  
    ├── gui
-   ├── location-api
-   │      ├── location_request.py      # łączenie z google geolocation i geocoding api -> zapisywanie odpowiedzi do loc.json  
-   │      └── loc.json               
-   ├── weather-api                        
-   │      ├── weather_data_request.py     # łączenie z open meteo api -> zapisywanie odpowiedzi do weather_data.json    
-   │      └── weather_data.json
+   ├── location_request.py    - pobieranie lokalilizacji przy użyciu google geolocation api         
+   ├── weather_data_request.py       - pobierania informacji pogodowych dla określonej lokalizacji przy użyciu open-meteo api
+├ tests                      
+   ├── tests.py      - testy 
 </pre>
 
  ### Struktura aplikacji 
  
  Aplikacja określa lokalizacje poprzez zewnętrzne api, następnie dla tej lub podanej przez użytkownika miejscowości z pomocą kolejnego api pobiera informacje pogodowe, które zostają odpowiednio przetworzone i wyświetlone w oknie aplikacji
  
- ![app structure diagram](https://github.com/witek3100/Weather-app-IO/blob/master/app_structure_diagram.png)
  
- ### Główne interfejsy
