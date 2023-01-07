@@ -1,5 +1,5 @@
 
-## Projekt Inżynieria Oprogramowania ISI2 - Desktopowa aplikacja z informacjami pogodowymi
+## Projekt Inżynieria Oprogramowania ISI2 - aplikacja z informacjami pogodowymi
 
 * Witold Nowogórski
 * Adam Pliszka
