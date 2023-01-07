@@ -9,8 +9,8 @@
 =======================================================================================
 <pre>
 ├ src                           #folder źródłowy  
-   ├── gui
-   ├── location_request.py    - pobieranie lokalilizacji przy użyciu google geolocation api         
+   ├── gui     - interfejs użytkownika
+   ├── location_request.py     - pobieranie lokalilizacji przy użyciu google geolocation api         
    ├── weather_data_request.py       - pobierania informacji pogodowych dla określonej lokalizacji przy użyciu open-meteo api
 ├ tests                      
    ├── tests.py      - testy 
