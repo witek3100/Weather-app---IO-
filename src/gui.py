@@ -67,6 +67,7 @@ class Ui_MainWindow(object):
         self.reload_location_button.setText('Reload location')
 
         self.update_weather_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.update_weather(self.lat, self.lon))
+        self.update_weather_button.clicked.connect(lambda: self.city_label.setText("Your Location"))
         self.update_weather_button.setGeometry(QtCore.QRect(270, 10, 121, 31))
         self.update_weather_button.setStyleSheet("background-color:rgb(100,200,250)")
         self.update_weather_button.setObjectName("pushButton_3")
@@ -232,7 +233,8 @@ class Ui_MainWindow(object):
 "Warszawa" :[52.237049,21.017532],
 "Katowice" : [50.270908,19.039993],
 "Tychy" : [50.124981,19.009438],
-"Gdańsk" : [54.372158,18.638306]}
+"Gdańsk" : [54.372158,18.638306],
+"Lizbona" : [50.000, 0.00]}
 
     def show_weather_for_city(self):
         city = self.search_bar.text()
@@ -283,7 +285,7 @@ class Ui_MainWindow(object):
         if snow > 0:
             self.wth.setText("Snow")
             percipation = snow
-        pixmap2 = self.choose_icon('hourly', 0, small=False)
+        pixmap2 = self.choose_icon('hourly', hour, small=False)
         self.main_icon.setPixmap(pixmap2)
         self.main_icon.resize(pixmap2.width(), pixmap2.height())
 
@@ -408,7 +410,7 @@ class Ui_MainWindow(object):
             if 6 <= self.weather[dh]["precipitation_hours"][x]:
                 return QtGui.QPixmap('../icons/rain_day_small.png')
         if dh == "hourly":
-            if self.weather[dh]["precipitation"][x] > 0:
+            if self.weather[dh]["precipitation"][x] > 1:
                 return QtGui.QPixmap('../icons/rain_day{}.png'.format(add_str))
             if self.weather[dh]["cloudcover"][x] < 20:
                 return QtGui.QPixmap('../icons/sun{}.png'.format(add_str))

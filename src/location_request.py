@@ -56,4 +56,3 @@ class LocationApi:
         json_object = json.dumps(cloc, indent=3)
         with open("loc.json", "w") as outfile:  # wrzucanie odpowiedzi do pliku json
             outfile.write(json_object)
-
