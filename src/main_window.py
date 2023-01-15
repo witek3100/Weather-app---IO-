@@ -25,21 +25,6 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
 
-        cities = {
-            "Wrocław": [51.107883, 17.038538],
-            "Rybnik": [50.096798, 18.542936],
-            "Opole": [50.671062, 17.926126],
-            "Elblag": [54.156059, 19.404490],
-            "Łódź": [51.759445, 19.457216],
-            "Starogard Gdański": [53.966187, 18.531017],
-            "Kolobrzeg": [54.175919, 15.583267],
-            "Lublin": [51.246452, 22.568445],
-            "Chelm": [51.143124, 23.471199],
-            "Warszawa": [52.237049, 21.017532],
-            "Katowice": [50.270908, 19.039993],
-            "Tychy": [50.124981, 19.009438],
-            "Gdańsk": [54.372158, 18.638306]}
-
         """ label displaying city name """
         self.city_label = QtWidgets.QLabel(self.centralwidget)
         self.city_label.setGeometry(QtCore.QRect(180, 60, 600, 81))
@@ -55,21 +40,15 @@ class Ui_MainWindow(object):
         self.upper_bar.setObjectName("label_2")
 
         """ buttons """
-        self.settings_button = QtWidgets.QPushButton(self.centralwidget)
+        self.settings_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.open_settings_window())
         self.settings_button.setGeometry(QtCore.QRect(10, 10, 121, 31))
         self.settings_button.setStyleSheet("background-color:rgb(100,200,250)")
         self.settings_button.setObjectName("pushButton")
         self.settings_button.setText('Settings')
 
-        self.reload_location_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.reload_location())
-        self.reload_location_button.setGeometry(QtCore.QRect(140, 10, 121, 31))
-        self.reload_location_button.setStyleSheet("background-color:rgb(100,200,250)")
-        self.reload_location_button.setObjectName("pushButton_2")
-        self.reload_location_button.setText('Reload location')
-
         self.update_weather_button = QtWidgets.QPushButton(self.centralwidget, clicked= lambda: self.update_weather(self.lat, self.lon))
         self.update_weather_button.clicked.connect(lambda: self.city_label.setText("Your Location"))
-        self.update_weather_button.setGeometry(QtCore.QRect(270, 10, 121, 31))
+        self.update_weather_button.setGeometry(QtCore.QRect(140, 10, 121, 31))
         self.update_weather_button.setStyleSheet("background-color:rgb(100,200,250)")
         self.update_weather_button.setObjectName("pushButton_3")
         self.update_weather_button.setText('Your Location')
@@ -182,13 +161,13 @@ class Ui_MainWindow(object):
 
         self.max_temperatures = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
         for c, i in enumerate(self.max_temperatures):
-            i.setGeometry(QtCore.QRect(215 + c * 125, 510, 25, 20))
+            i.setGeometry(QtCore.QRect(215 + c * 125, 510, 40, 20))
             i.setStyleSheet("font: 700 9pt \"Segoe UI\";""color: rgb(255,255,255)")
             i.setObjectName("max_temperature_{}".format(c+1))
 
         self.min_temperatures = [QtWidgets.QLabel(self.centralwidget) for i in range(6)]
         for c, i in enumerate(self.min_temperatures):
-            i.setGeometry(QtCore.QRect(180 + c * 125, 510, 25, 20))
+            i.setGeometry(QtCore.QRect(180 + c * 125, 510, 40, 20))
             i.setStyleSheet("font:10pt \"Calibri\";\n""color:rgb(172, 172, 172)")
             i.setObjectName("max_temperature_{}".format(c + 1))
 
@@ -227,18 +206,15 @@ class Ui_MainWindow(object):
             self.current_location_label.setText("Unable to find this city...")
             return
         self.city_label.setText(city)
-        self.current_location_label.setText("{} : {} {}".format(city, cities[city][0], cities[city][1]))
         self.update_weather(cities[city][0], cities[city][1])
-
-
-
+        self.current_location_label.setText("{} : {} {}".format(city, cities[city][0], cities[city][1]))
     def update_weather(self, lat, lon):
         """
         updates lables displaying weather information
         :param lat
         :param lon
         """
-
+        self.current_location_label.setText("{}   {}".format(lat, lon))
         """ get current weather """
         WeatherApi.get_weather(lat, lon)
         with open(os.path.relpath("weather_data.json")) as wth_file:
