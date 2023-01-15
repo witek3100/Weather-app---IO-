@@ -24,6 +24,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
+        self.settings_window_open = False
 
         """ label displaying city name """
         self.city_label = QtWidgets.QLabel(self.centralwidget)
@@ -189,6 +190,85 @@ class Ui_MainWindow(object):
             i.setText("")
             i.setObjectName("h_icon_{}".format(c + 1))
 
+        """ settings window """
+        self.settings_label = QtWidgets.QLabel(self.centralwidget)
+        self.settings_label.setGeometry(QtCore.QRect(0, 50, 300, 300))
+        self.settings_label.setStyleSheet("background-color:rgb(30, 100, 190)")
+        self.settings_label.setText("")
+        self.settings_label.setObjectName("label_2")
+        self.settings_label.hide()
+
+        self.settings_label2 = QtWidgets.QLabel(self.centralwidget)
+        self.settings_label2.setGeometry(QtCore.QRect(110, 50, 101, 51))
+        self.settings_label2.setStyleSheet("background:rgba(191, 64, 64, 2);\n"
+                                           "color:rgb(255,255,255);\n"
+                                           "font: 75 15pt \"Ubuntu Condensed\";")
+        self.settings_label2.setObjectName("label_2")
+        self.settings_label2.setText("Settings")
+        self.settings_label2.hide()
+
+        self.units_label = QtWidgets.QLabel(self.centralwidget)
+        self.units_label.setGeometry(QtCore.QRect(130, 100, 101, 51))
+        self.units_label.setStyleSheet("background:rgba(191, 64, 64, 2);\n"
+                                       "color:rgb(255,255,255);\n"
+                                       "font: 75 12pt \"Ubuntu Condensed\";")
+        self.units_label.setObjectName("label_2")
+        self.units_label.setText("units")
+        self.units_label.hide()
+
+        self.temp_label = QtWidgets.QLabel(self.centralwidget)
+        self.temp_label.setGeometry(QtCore.QRect(20, 140, 130, 51))
+        self.temp_label.setStyleSheet("background:rgba(191, 64, 64, 2);\n"
+                                      "color:rgb(255,255,255);\n"
+                                      "font: 75 12pt \"Ubuntu Condensed\";")
+        self.temp_label.setObjectName("label_2")
+        self.temp_label.setText("temperature")
+        self.temp_label.hide()
+
+        self.comboBoxTemp = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBoxTemp.setGeometry(QtCore.QRect(30, 190, 91, 25))
+        self.comboBoxTemp.setStyleSheet("background-color: rgba(15, 86, 245, 159);")
+        self.comboBoxTemp.setObjectName("comboBox")
+        self.comboBoxTemp.addItem('°C')
+        self.comboBoxTemp.addItem('K')
+        self.comboBoxTemp.addItem('°F')
+        self.comboBoxTemp.hide()
+
+        self.wind_label = QtWidgets.QLabel(self.centralwidget)
+        self.wind_label.setGeometry(QtCore.QRect(210, 140, 101, 51))
+        self.wind_label.setStyleSheet("background:rgba(191, 64, 64, 2);\n"
+                                      "color:rgb(255,255,255);\n"
+                                      "font: 75 12pt \"Ubuntu Condensed\";")
+        self.wind_label.setObjectName("label_2")
+        self.wind_label.setText("wind")
+        self.wind_label.hide()
+
+        self.comboBoxWind = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBoxWind.setGeometry(QtCore.QRect(190, 190, 91, 25))
+        self.comboBoxWind.setStyleSheet("background-color: rgba(15, 86, 245, 159);")
+        self.comboBoxWind.setObjectName("comboBox")
+        self.comboBoxWind.addItem('mph')
+        self.comboBoxWind.addItem('ms')
+        self.comboBoxWind.addItem('kmh')
+        self.comboBoxWind.hide()
+
+        self.theme_label = QtWidgets.QLabel(self.centralwidget)
+        self.theme_label.setGeometry(QtCore.QRect(125, 230, 101, 51))
+        self.theme_label.setStyleSheet("background:rgba(191, 64, 64, 2);\n"
+                                       "color:rgb(255,255,255);\n"
+                                       "font: 75 12pt \"Ubuntu Condensed\";")
+        self.theme_label.setObjectName("label_2")
+        self.theme_label.setText("theme")
+        self.theme_label.hide()
+
+        self.comboBoxTheme = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBoxTheme.setGeometry(QtCore.QRect(110, 280, 91, 25))
+        self.comboBoxTheme.setStyleSheet("background-color: rgba(15, 86, 245, 159);")
+        self.comboBoxTheme.setObjectName("comboBox")
+        self.comboBoxTheme.addItems(['dark', 'sky', 'sunset', 'winter'])
+        self.comboBoxTheme.activated[str].connect(self.change_theme)
+        self.comboBoxTheme.hide()
+
         self.actionChange_units = QtWidgets.QAction(MainWindow)
         self.actionChange_units.setObjectName("actionChange_units")
         self.actiontime_zone = QtWidgets.QAction(MainWindow)
@@ -208,6 +288,7 @@ class Ui_MainWindow(object):
         self.city_label.setText(city)
         self.update_weather(cities[city][0], cities[city][1])
         self.current_location_label.setText("{} : {} {}".format(city, cities[city][0], cities[city][1]))
+
     def update_weather(self, lat, lon):
         """
         updates lables displaying weather information
@@ -311,7 +392,6 @@ class Ui_MainWindow(object):
         else:
             self.current_location_text = "YOUR CURRENT LOCATION: {}   {}".format(self.lat, self.lon)
 
-
     def show_daily_forecast(self):
         """
         shows daily forecast and hides hourly
@@ -353,7 +433,7 @@ class Ui_MainWindow(object):
             i.show()
         for i in self.hourly_icons:
             i.show()
-            
+
     def choose_icon(self, dh, x, small=True):
         """
         function choose icon from icons folder for icon label pixmap
@@ -384,6 +464,116 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Weather"))
         self.city_label.setText(_translate("MainWindow", "Your Location"))
+
+    def open_settings_window(self):
+        """
+        settings window function (hiding, displaying, changing settings)
+        :return:
+        """
+        if self.settings_window_open:
+            self.settings_label.hide()
+            self.settings_label2.hide()
+            self.units_label.hide()
+            self.temp_label.hide()
+            self.comboBoxTemp.hide()
+            self.wind_label.hide()
+            self.comboBoxWind.hide()
+            self.theme_label.hide()
+            self.comboBoxTheme.hide()
+            self.settings_window_open = False
+        else:
+            self.settings_label.show()
+            self.settings_label2.show()
+            self.units_label.show()
+            self.temp_label.show()
+            self.comboBoxTemp.show()
+            self.wind_label.show()
+            self.comboBoxWind.show()
+            self.theme_label.show()
+            self.comboBoxTheme.show()
+            self.settings_window_open = True
+
+    def change_theme(self):
+        """
+        changes settings according to options choose in settings window
+        :return:
+        """
+        if self.comboBoxTheme.currentText() == 'dark':
+            MainWindow.setStyleSheet(
+                "QWidget#centralwidget{\n""background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(50, 70, 70, 255));\n""border-color: rgb(30, 100, 190);\n""}")
+            self.upper_bar.setStyleSheet("background-color:rgb(40, 50, 40)")
+            self.frcs_label.setStyleSheet("background-color:rgba(40, 50, 40, 150);\n"
+                                          "font: 300 9pt \"Bahnschrift Light\";\n"
+                                          "border-radius:20px;")
+            self.search_button.setStyleSheet("background-color:rgb(50,50,50)")
+            self.settings_button.setStyleSheet("background-color:rgb(50,50,50)")
+            self.Hourly_button.setStyleSheet("background-color:rgb(50,50,50)")
+            self.Daily_button.setStyleSheet("background-color:rgb(50,50,50)")
+            self.update_weather_button.setStyleSheet("background-color:rgb(50,50,50)")
+            self.search_bar.setStyleSheet("background-color:rgb(50,50,50)")
+            self.settings_label.setStyleSheet("background-color:rgb(40,50,40)")
+            self.comboBoxTheme.setStyleSheet("background-color:rgb(50,50,50)")
+            self.comboBoxWind.setStyleSheet("background-color:rgb(50,50,50)")
+            self.comboBoxTemp.setStyleSheet("background-color:rgb(50,50,50)")
+            self.current_location_label.setStyleSheet("background-color:rgb(40,50,40)")
+
+        if self.comboBoxTheme.currentText() == 'sky':
+            MainWindow.setStyleSheet(
+                "QWidget#centralwidget{\n""background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 112, 255, 255), stop:1 rgba(255, 255, 255, 255));\n""border-color: rgb(30, 100, 190);\n""}")
+            self.upper_bar.setStyleSheet("background-color:rgb(30, 100, 190)")
+            self.frcs_label.setStyleSheet("background-color:rgba(30, 100, 190, 150);\n"
+                                          "font: 300 9pt \"Bahnschrift Light\";\n"
+                                          "border-radius:20px;")
+            self.search_button.setStyleSheet("background-color:rgb(100,200,250)")
+            self.settings_button.setStyleSheet("background-color:rgb(100,200,250)")
+            self.update_weather_button.setStyleSheet("background-color:rgb(100,200,250)")
+            self.Hourly_button.setStyleSheet("background-color:rgb(100,200,250)")
+            self.Daily_button.setStyleSheet("background-color:rgb(100,200,250)")
+            self.search_bar.setStyleSheet("background-color:rgb(130,200,250)")
+            self.settings_label.setStyleSheet("background-color:rgb(30, 100, 190)")
+            self.comboBoxTheme.setStyleSheet("background-color: rgba(15, 86, 245, 159);")
+            self.comboBoxWind.setStyleSheet("background-color: rgba(15, 86, 245, 159);")
+            self.comboBoxTemp.setStyleSheet("background-color: rgba(15, 86, 245, 159);")
+            self.current_location_label.setStyleSheet("background-color:rgba(30, 100, 190, 100);\n""font: 300 9pt \"Bahnschrift Light\";")
+
+        if self.comboBoxTheme.currentText() == 'winter':
+            MainWindow.setStyleSheet(
+                "QWidget#centralwidget{\n""background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(220, 220, 220, 255), stop:1 rgba(200, 200, 200, 255));\n""border-color: rgb(30, 100, 190);\n""}")
+            self.upper_bar.setStyleSheet("background-color:rgb(200, 200, 200)")
+            self.frcs_label.setStyleSheet("background-color:rgba(200, 200, 200, 150);\n"
+                                          "font: 300 9pt \"Bahnschrift Light\";\n"
+                                          "border-radius:20px;")
+            self.search_button.setStyleSheet("background-color:rgb(230,230,230)")
+            self.settings_button.setStyleSheet("background-color:rgb(230,230,230)")
+            self.update_weather_button.setStyleSheet("background-color:rgb(230,230,230)")
+            self.Hourly_button.setStyleSheet("background-color:rgb(230,230,230)")
+            self.Daily_button.setStyleSheet("background-color:rgb(230,230,230)")
+            self.search_bar.setStyleSheet("background-color:rgb(230,230,230)")
+            self.settings_label.setStyleSheet("background-color:rgb(200, 200, 200)")
+            self.comboBoxTheme.setStyleSheet("background-color: rgba(230, 230, 230, 159);")
+            self.comboBoxWind.setStyleSheet("background-color: rgba(230, 230, 230, 159);")
+            self.comboBoxTemp.setStyleSheet("background-color: rgba(230, 230, 230, 159);")
+            self.current_location_label.setStyleSheet("background-color:rgba(200, 200, 200, 100);\n""font: 300 9pt \"Bahnschrift Light\";")
+
+        if self.comboBoxTheme.currentText() == 'sunset':
+            MainWindow.setStyleSheet(
+                "QWidget#centralwidget{\n""background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(30, 10, 200, 255), stop:1 rgba(150, 100, 20, 255));\n""border-color: rgb(30, 100, 190);\n""}")
+            self.upper_bar.setStyleSheet("background-color:rgb(170, 110, 50)")
+            self.frcs_label.setStyleSheet("background-color:rgba(170, 110, 50, 150);\n"
+                                          "font: 300 9pt \"Bahnschrift Light\";\n"
+                                          "border-radius:20px;")
+            self.search_button.setStyleSheet("background-color:rgb(150,100,50)")
+            self.settings_button.setStyleSheet("background-color:rgb(150,100,50)")
+            self.update_weather_button.setStyleSheet("background-color:rgb(150,100,50)")
+            self.Hourly_button.setStyleSheet("background-color:rgb(150,100,50)")
+            self.Daily_button.setStyleSheet("background-color:rgb(150,100,50)")
+            self.search_bar.setStyleSheet("background-color:rgb(150,100,50)")
+            self.settings_label.setStyleSheet("background-color:rgb(170, 110, 50)")
+            self.comboBoxTheme.setStyleSheet("background-color: rgba(150,100,50, 159);")
+            self.comboBoxWind.setStyleSheet("background-color: rgba(150,100,50, 159);")
+            self.comboBoxTemp.setStyleSheet("background-color: rgba(150,100,50,159);")
+            self.current_location_label.setStyleSheet("background-color:rgba(170, 110, 50, 100);\n""font: 300 9pt \"Bahnschrift Light\";")
+
 
 
 if __name__ == "__main__":
