@@ -1,7 +1,7 @@
 {
    "plus_code": {
-      "compound_code": "3W93+V4J Krak\u00f3w, Poland",
-      "global_code": "9F2X3W93+V4J"
+      "compound_code": "3W93+V3Q Krak\u00f3w, Poland",
+      "global_code": "9F2X3W93+V3Q"
    },
    "results": [
       {
@@ -382,8 +382,8 @@
       {
          "address_components": [
             {
-               "long_name": "3W93+V4",
-               "short_name": "3W93+V4",
+               "long_name": "3W93+V3",
+               "short_name": "3W93+V3",
                "types": [
                   "plus_code"
                ]
@@ -429,38 +429,38 @@
                ]
             }
          ],
-         "formatted_address": "3W93+V4 Krak\u00f3w, Poland",
+         "formatted_address": "3W93+V3 Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
                   "lat": 50.06975,
-                  "lng": 19.902875
+                  "lng": 19.90275
                },
                "southwest": {
                   "lat": 50.06962499999999,
-                  "lng": 19.90275
+                  "lng": 19.902625
                }
             },
             "location": {
-               "lat": 50.0697134,
-               "lng": 19.9027664
+               "lat": 50.0697033,
+               "lng": 19.9027339
             },
             "location_type": "GEOMETRIC_CENTER",
             "viewport": {
                "northeast": {
                   "lat": 50.0710364802915,
-                  "lng": 19.9041614802915
+                  "lng": 19.9040364802915
                },
                "southwest": {
                   "lat": 50.0683385197085,
-                  "lng": 19.9014635197085
+                  "lng": 19.9013385197085
                }
             }
          },
-         "place_id": "GhIJ5otiXuwISUARe-3jshvnM0A",
+         "place_id": "GhIJLvaoCewISUARk32hkRnnM0A",
          "plus_code": {
-            "compound_code": "3W93+V4 Krak\u00f3w, Poland",
-            "global_code": "9F2X3W93+V4"
+            "compound_code": "3W93+V3 Krak\u00f3w, Poland",
+            "global_code": "9F2X3W93+V3"
          },
          "types": [
             "plus_code"
