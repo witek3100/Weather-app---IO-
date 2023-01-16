@@ -11,13 +11,7 @@
 git clone https://github.com/witek3100/Weather-app-IO
 ```  
 - Windows <br /> 
-plik WeatherApp otwiera aplikacje <br /> 
-lub 
-
-```
-python ../src/gui.py
-
-```
+plik WeatherApp.exe oraz ../src/gui.py otwierają aplikacje <br /> 
 
 - Linux 
 ```
