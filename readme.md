@@ -10,8 +10,8 @@
 ```
 git clone https://github.com/witek3100/Weather-app-IO
 ```  
-- Windows
-plik WeatherApp otwiera aplikacje 
+- Windows <br /> 
+plik WeatherApp otwiera aplikacje <br /> 
 lub 
 
 ```
