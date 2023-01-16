@@ -28,6 +28,7 @@ python ..src/gui.py
 ### Struktura aplikacji 
  
  Aplikacja określa lokalizacje poprzez zewnętrzne api, następnie dla tej lub podanej przez użytkownika miejscowości z pomocą kolejnego api pobiera informacje pogodowe, które zostają odpowiednio przetworzone i wyświetlone w oknie aplikacji
+ 
 =======================================================================================
 <pre>
 ├ icons             #ikony używane przez aplikacje
