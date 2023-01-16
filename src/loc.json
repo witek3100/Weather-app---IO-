@@ -1,28 +1,28 @@
 {
    "plus_code": {
-      "compound_code": "3X79+5GP Krak\u00f3w, Poland",
-      "global_code": "9F2X3X79+5GP"
+      "compound_code": "3W93+V4J Krak\u00f3w, Poland",
+      "global_code": "9F2X3W93+V4J"
    },
    "results": [
       {
          "address_components": [
             {
-               "long_name": "21",
-               "short_name": "21",
+               "long_name": "1",
+               "short_name": "1",
                "types": [
                   "street_number"
                ]
             },
             {
-               "long_name": "Cysters\u00f3w",
-               "short_name": "Cysters\u00f3w",
+               "long_name": "Juliana Tokarskiego",
+               "short_name": "Juliana Tokarskiego",
                "types": [
                   "route"
                ]
             },
             {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
                "types": [
                   "political",
                   "sublocality",
@@ -62,233 +62,35 @@
                ]
             },
             {
-               "long_name": "31-553",
-               "short_name": "31-553",
+               "long_name": "30-065",
+               "short_name": "30-065",
                "types": [
                   "postal_code"
                ]
             }
          ],
-         "formatted_address": "Cysters\u00f3w 21, 31-553 Krak\u00f3w, Poland",
+         "formatted_address": "Juliana Tokarskiego 1, 30-065 Krak\u00f3w, Poland",
          "geometry": {
-            "bounds": {
-               "northeast": {
-                  "lat": 50.063657,
-                  "lng": 19.9688771
-               },
-               "southwest": {
-                  "lat": 50.062992,
-                  "lng": 19.968294
-               }
-            },
             "location": {
-               "lat": 50.06336040000001,
-               "lng": 19.9685979
+               "lat": 50.0696191,
+               "lng": 19.9029163
             },
             "location_type": "ROOFTOP",
             "viewport": {
                "northeast": {
-                  "lat": 50.0646734802915,
-                  "lng": 19.9699345302915
+                  "lat": 50.07096808029149,
+                  "lng": 19.9042652802915
                },
                "southwest": {
-                  "lat": 50.0619755197085,
-                  "lng": 19.9672365697085
+                  "lat": 50.06827011970849,
+                  "lng": 19.90156731970849
                }
             }
          },
-         "place_id": "ChIJQ9mWGiVbFkcROukXEZ6L8J0",
-         "types": [
-            "premise"
-         ]
-      },
-      {
-         "address_components": [
-            {
-               "long_name": "Orange Polska",
-               "short_name": "Orange Polska",
-               "types": [
-                  "premise"
-               ]
-            },
-            {
-               "long_name": "21c",
-               "short_name": "21c",
-               "types": [
-                  "street_number"
-               ]
-            },
-            {
-               "long_name": "Cysters\u00f3w",
-               "short_name": "Cysters\u00f3w",
-               "types": [
-                  "route"
-               ]
-            },
-            {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
-               "types": [
-                  "political",
-                  "sublocality",
-                  "sublocality_level_1"
-               ]
-            },
-            {
-               "long_name": "Krak\u00f3w",
-               "short_name": "Krak\u00f3w",
-               "types": [
-                  "locality",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Krak\u00f3w",
-               "short_name": "Krak\u00f3w",
-               "types": [
-                  "administrative_area_level_2",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Ma\u0142opolskie",
-               "short_name": "Ma\u0142opolskie",
-               "types": [
-                  "administrative_area_level_1",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Poland",
-               "short_name": "PL",
-               "types": [
-                  "country",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "31-553",
-               "short_name": "31-553",
-               "types": [
-                  "postal_code"
-               ]
-            }
-         ],
-         "formatted_address": "Orange Polska, Cysters\u00f3w 21c, 31-553 Krak\u00f3w, Poland",
-         "geometry": {
-            "location": {
-               "lat": 50.0634722,
-               "lng": 19.9690833
-            },
-            "location_type": "ROOFTOP",
-            "viewport": {
-               "northeast": {
-                  "lat": 50.0648211802915,
-                  "lng": 19.9704322802915
-               },
-               "southwest": {
-                  "lat": 50.0621232197085,
-                  "lng": 19.96773431970849
-               }
-            }
-         },
-         "place_id": "ChIJzdBo2uFaFkcRJItA2svEo74",
+         "place_id": "ChIJFalJZLlbFkcRyQ5KV8SGpkQ",
          "plus_code": {
-            "compound_code": "3X79+9J Krak\u00f3w, Poland",
-            "global_code": "9F2X3X79+9J"
-         },
-         "types": [
-            "establishment",
-            "point_of_interest"
-         ]
-      },
-      {
-         "address_components": [
-            {
-               "long_name": "21d",
-               "short_name": "21d",
-               "types": [
-                  "street_number"
-               ]
-            },
-            {
-               "long_name": "Cysters\u00f3w",
-               "short_name": "Cysters\u00f3w",
-               "types": [
-                  "route"
-               ]
-            },
-            {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
-               "types": [
-                  "political",
-                  "sublocality",
-                  "sublocality_level_1"
-               ]
-            },
-            {
-               "long_name": "Krak\u00f3w",
-               "short_name": "Krak\u00f3w",
-               "types": [
-                  "locality",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Krak\u00f3w",
-               "short_name": "Krak\u00f3w",
-               "types": [
-                  "administrative_area_level_2",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Ma\u0142opolskie",
-               "short_name": "Ma\u0142opolskie",
-               "types": [
-                  "administrative_area_level_1",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Poland",
-               "short_name": "PL",
-               "types": [
-                  "country",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "31-553",
-               "short_name": "31-553",
-               "types": [
-                  "postal_code"
-               ]
-            }
-         ],
-         "formatted_address": "Cysters\u00f3w 21d, 31-553 Krak\u00f3w, Poland",
-         "geometry": {
-            "location": {
-               "lat": 50.0636318,
-               "lng": 19.9685166
-            },
-            "location_type": "ROOFTOP",
-            "viewport": {
-               "northeast": {
-                  "lat": 50.0649807802915,
-                  "lng": 19.9698655802915
-               },
-               "southwest": {
-                  "lat": 50.0622828197085,
-                  "lng": 19.9671676197085
-               }
-            }
-         },
-         "place_id": "ChIJObLeCSVbFkcRqVKIwvSfpOE",
-         "plus_code": {
-            "compound_code": "3X79+FC Krak\u00f3w, Poland",
-            "global_code": "9F2X3X79+FC"
+            "compound_code": "3W93+R5 Krak\u00f3w, Poland",
+            "global_code": "9F2X3W93+R5"
          },
          "types": [
             "street_address"
@@ -297,8 +99,291 @@
       {
          "address_components": [
             {
-               "long_name": "3X79+5G",
-               "short_name": "3X79+5G",
+               "long_name": "1",
+               "short_name": "1",
+               "types": [
+                  "street_number"
+               ]
+            },
+            {
+               "long_name": "Juliana Tokarskiego",
+               "short_name": "Juliana Tokarskiego",
+               "types": [
+                  "route"
+               ]
+            },
+            {
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "30-065",
+               "short_name": "30-065",
+               "types": [
+                  "postal_code"
+               ]
+            }
+         ],
+         "formatted_address": "Juliana Tokarskiego 1, 30-065 Krak\u00f3w, Poland",
+         "geometry": {
+            "location": {
+               "lat": 50.0696191,
+               "lng": 19.9029163
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.07096808029149,
+                  "lng": 19.9042652802915
+               },
+               "southwest": {
+                  "lat": 50.06827011970849,
+                  "lng": 19.90156731970849
+               }
+            }
+         },
+         "place_id": "ChIJdR-QiGtbFkcRuuNP-aOvefg",
+         "plus_code": {
+            "compound_code": "3W93+R5 Krak\u00f3w, Poland",
+            "global_code": "9F2X3W93+R5"
+         },
+         "types": [
+            "establishment",
+            "hair_care",
+            "point_of_interest"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "Dom Studencki nr 3 \"Akropol\"",
+               "short_name": "Dom Studencki nr 3 \"Akropol\"",
+               "types": [
+                  "premise"
+               ]
+            },
+            {
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "33-332",
+               "short_name": "33-332",
+               "types": [
+                  "postal_code"
+               ]
+            }
+         ],
+         "formatted_address": "Dom Studencki nr 3 \"Akropol\", 33-332 Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.0697165,
+                  "lng": 19.9031209
+               },
+               "southwest": {
+                  "lat": 50.0693525,
+                  "lng": 19.9027229
+               }
+            },
+            "location": {
+               "lat": 50.0695339,
+               "lng": 19.9029121
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.0708834802915,
+                  "lng": 19.9042708802915
+               },
+               "southwest": {
+                  "lat": 50.0681855197085,
+                  "lng": 19.9015729197085
+               }
+            }
+         },
+         "place_id": "ChIJ4zbLZblbFkcRFWTkyHNxFfA",
+         "types": [
+            "premise"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "1",
+               "short_name": "1",
+               "types": [
+                  "street_number"
+               ]
+            },
+            {
+               "long_name": "Juliana Tokarskiego",
+               "short_name": "Juliana Tokarskiego",
+               "types": [
+                  "route"
+               ]
+            },
+            {
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
+               "types": [
+                  "political",
+                  "sublocality",
+                  "sublocality_level_1"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "locality",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Krak\u00f3w",
+               "short_name": "Krak\u00f3w",
+               "types": [
+                  "administrative_area_level_2",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Ma\u0142opolskie",
+               "short_name": "Ma\u0142opolskie",
+               "types": [
+                  "administrative_area_level_1",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "Poland",
+               "short_name": "PL",
+               "types": [
+                  "country",
+                  "political"
+               ]
+            },
+            {
+               "long_name": "30-001",
+               "short_name": "30-001",
+               "types": [
+                  "postal_code"
+               ]
+            }
+         ],
+         "formatted_address": "Juliana Tokarskiego 1, 30-001 Krak\u00f3w, Poland",
+         "geometry": {
+            "bounds": {
+               "northeast": {
+                  "lat": 50.0697663,
+                  "lng": 19.9027253
+               },
+               "southwest": {
+                  "lat": 50.0693274,
+                  "lng": 19.9025511
+               }
+            },
+            "location": {
+               "lat": 50.0695469,
+               "lng": 19.9026382
+            },
+            "location_type": "GEOMETRIC_CENTER",
+            "viewport": {
+               "northeast": {
+                  "lat": 50.0708958302915,
+                  "lng": 19.90398718029151
+               },
+               "southwest": {
+                  "lat": 50.0681978697085,
+                  "lng": 19.9012892197085
+               }
+            }
+         },
+         "place_id": "ChIJl8P4ZblbFkcRsiXoIu5mUws",
+         "types": [
+            "route"
+         ]
+      },
+      {
+         "address_components": [
+            {
+               "long_name": "3W93+V4",
+               "short_name": "3W93+V4",
                "types": [
                   "plus_code"
                ]
@@ -344,38 +429,38 @@
                ]
             }
          ],
-         "formatted_address": "3X79+5G Krak\u00f3w, Poland",
+         "formatted_address": "3W93+V4 Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 50.063,
-                  "lng": 19.968875
+                  "lat": 50.06975,
+                  "lng": 19.902875
                },
                "southwest": {
-                  "lat": 50.062875,
-                  "lng": 19.96875
+                  "lat": 50.06962499999999,
+                  "lng": 19.90275
                }
             },
             "location": {
-               "lat": 50.0629504,
-               "lng": 19.9688192
+               "lat": 50.0697134,
+               "lng": 19.9027664
             },
             "location_type": "GEOMETRIC_CENTER",
             "viewport": {
                "northeast": {
-                  "lat": 50.06428648029149,
-                  "lng": 19.9701614802915
+                  "lat": 50.0710364802915,
+                  "lng": 19.9041614802915
                },
                "southwest": {
-                  "lat": 50.0615885197085,
-                  "lng": 19.9674635197085
+                  "lat": 50.0683385197085,
+                  "lng": 19.9014635197085
                }
             }
          },
-         "place_id": "GhIJk6I6wg4ISUARpLz7iAT4M0A",
+         "place_id": "GhIJ5otiXuwISUARe-3jshvnM0A",
          "plus_code": {
-            "compound_code": "3X79+5G Krak\u00f3w, Poland",
-            "global_code": "9F2X3X79+5G"
+            "compound_code": "3W93+V4 Krak\u00f3w, Poland",
+            "global_code": "9F2X3W93+V4"
          },
          "types": [
             "plus_code"
@@ -384,117 +469,10 @@
       {
          "address_components": [
             {
-               "long_name": "24-22",
-               "short_name": "24-22",
-               "types": [
-                  "street_number"
-               ]
-            },
-            {
-               "long_name": "Cysters\u00f3w",
-               "short_name": "Cysters\u00f3w",
-               "types": [
-                  "route"
-               ]
-            },
-            {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
-               "types": [
-                  "political",
-                  "sublocality",
-                  "sublocality_level_1"
-               ]
-            },
-            {
-               "long_name": "Krak\u00f3w",
-               "short_name": "Krak\u00f3w",
-               "types": [
-                  "locality",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Krak\u00f3w",
-               "short_name": "Krak\u00f3w",
-               "types": [
-                  "administrative_area_level_2",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Ma\u0142opolskie",
-               "short_name": "Ma\u0142opolskie",
-               "types": [
-                  "administrative_area_level_1",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "Poland",
-               "short_name": "PL",
-               "types": [
-                  "country",
-                  "political"
-               ]
-            },
-            {
-               "long_name": "31-553",
-               "short_name": "31-553",
+               "long_name": "30-065",
+               "short_name": "30-065",
                "types": [
                   "postal_code"
-               ]
-            }
-         ],
-         "formatted_address": "Cysters\u00f3w 24-22, 31-553 Krak\u00f3w, Poland",
-         "geometry": {
-            "bounds": {
-               "northeast": {
-                  "lat": 50.0636054,
-                  "lng": 19.970098
-               },
-               "southwest": {
-                  "lat": 50.0629121,
-                  "lng": 19.9699958
-               }
-            },
-            "location": {
-               "lat": 50.0632575,
-               "lng": 19.9700266
-            },
-            "location_type": "GEOMETRIC_CENTER",
-            "viewport": {
-               "northeast": {
-                  "lat": 50.0646077302915,
-                  "lng": 19.9713958802915
-               },
-               "southwest": {
-                  "lat": 50.0619097697085,
-                  "lng": 19.9686979197085
-               }
-            }
-         },
-         "place_id": "ChIJD_2BdCVbFkcRXLmWjXfHG44",
-         "types": [
-            "route"
-         ]
-      },
-      {
-         "address_components": [
-            {
-               "long_name": "31-553",
-               "short_name": "31-553",
-               "types": [
-                  "postal_code"
-               ]
-            },
-            {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
-               "types": [
-                  "political",
-                  "sublocality",
-                  "sublocality_level_1"
                ]
             },
             {
@@ -530,35 +508,35 @@
                ]
             }
          ],
-         "formatted_address": "31-553 Krak\u00f3w, Poland",
+         "formatted_address": "30-065 Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 50.0663251,
-                  "lng": 19.9759483
+                  "lat": 50.0700381,
+                  "lng": 19.9079682
                },
                "southwest": {
-                  "lat": 50.0584648,
-                  "lng": 19.9675538
+                  "lat": 50.06264789999999,
+                  "lng": 19.9014238
                }
             },
             "location": {
-               "lat": 50.0630818,
-               "lng": 19.9705061
+               "lat": 50.0656397,
+               "lng": 19.9037764
             },
             "location_type": "APPROXIMATE",
             "viewport": {
                "northeast": {
-                  "lat": 50.0663251,
-                  "lng": 19.9759483
+                  "lat": 50.0700381,
+                  "lng": 19.9079682
                },
                "southwest": {
-                  "lat": 50.0584648,
-                  "lng": 19.9675538
+                  "lat": 50.06264789999999,
+                  "lng": 19.9014238
                }
             }
          },
-         "place_id": "ChIJ-8St8i9bFkcRu_9oWPpzXTE",
+         "place_id": "ChIJQd0fdbxbFkcRTl4DlVPAG3U",
          "types": [
             "postal_code"
          ]
@@ -566,16 +544,16 @@
       {
          "address_components": [
             {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
+               "long_name": "Ma\u0142e B\u0142onia",
+               "short_name": "Ma\u0142e B\u0142onia",
                "types": [
                   "neighborhood",
                   "political"
                ]
             },
             {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
                "types": [
                   "political",
                   "sublocality",
@@ -623,35 +601,35 @@
                ]
             }
          ],
-         "formatted_address": "Grzeg\u00f3rzki, Krak\u00f3w, Poland",
+         "formatted_address": "Ma\u0142e B\u0142onia, Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 50.0670856,
-                  "lng": 19.9761126
+                  "lat": 50.0723287,
+                  "lng": 19.9040789
                },
                "southwest": {
-                  "lat": 50.0501053,
-                  "lng": 19.9473441
+                  "lat": 50.0629177,
+                  "lng": 19.8872374
                }
             },
             "location": {
-               "lat": 50.0625501,
-               "lng": 19.9645015
+               "lat": 50.0711362,
+               "lng": 19.8952438
             },
             "location_type": "APPROXIMATE",
             "viewport": {
                "northeast": {
-                  "lat": 50.0670856,
-                  "lng": 19.9761126
+                  "lat": 50.0723287,
+                  "lng": 19.9040789
                },
                "southwest": {
-                  "lat": 50.0501053,
-                  "lng": 19.9473441
+                  "lat": 50.0629177,
+                  "lng": 19.8872374
                }
             }
          },
-         "place_id": "ChIJAWFP6ztbFkcRVE3aNufnWPQ",
+         "place_id": "ChIJ_SIoar9bFkcRxWJoCQqZHRQ",
          "types": [
             "neighborhood",
             "political"
@@ -660,8 +638,8 @@
       {
          "address_components": [
             {
-               "long_name": "Grzeg\u00f3rzki",
-               "short_name": "Grzeg\u00f3rzki",
+               "long_name": "Krowodrza",
+               "short_name": "Krowodrza",
                "types": [
                   "political",
                   "sublocality",
@@ -709,35 +687,35 @@
                ]
             }
          ],
-         "formatted_address": "Grzeg\u00f3rzki, Krak\u00f3w, Poland",
+         "formatted_address": "Krowodrza, Krak\u00f3w, Poland",
          "geometry": {
             "bounds": {
                "northeast": {
-                  "lat": 50.0798368,
-                  "lng": 19.9887366
+                  "lat": 50.0826614,
+                  "lng": 19.9473629
                },
                "southwest": {
-                  "lat": 50.0501053,
-                  "lng": 19.9472914
+                  "lat": 50.059157,
+                  "lng": 19.8872374
                }
             },
             "location": {
-               "lat": 50.0664893,
-               "lng": 19.9599783
+               "lat": 50.0729783,
+               "lng": 19.9155773
             },
             "location_type": "APPROXIMATE",
             "viewport": {
                "northeast": {
-                  "lat": 50.0798368,
-                  "lng": 19.9887366
+                  "lat": 50.0826614,
+                  "lng": 19.9473629
                },
                "southwest": {
-                  "lat": 50.0501053,
-                  "lng": 19.9472914
+                  "lat": 50.059157,
+                  "lng": 19.8872374
                }
             }
          },
-         "place_id": "ChIJscOmvSVbFkcRqiFd7-WaFmA",
+         "place_id": "ChIJzbeBh6VbFkcRhtAbBNnM-xs",
          "types": [
             "political",
             "sublocality",
