@@ -13,9 +13,9 @@ git clone https://github.com/witek3100/Weather-app-IO
 ```  
 pip inistall pyqt5
 ```  
-w folderze repozytorium:
+w folderze src w repozytorium:
 ```  
-python ../src/gui.py
+python gui.py
 ```  
 
 =======================================================================================
