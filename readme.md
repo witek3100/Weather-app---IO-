@@ -5,7 +5,26 @@
 * Adam Pliszka
 * Kaja Dzielnicka
 * Bartłomiej Stępniewski
-  
+
+# URUCHAMIANIE #
+```
+git clone https://github.com/witek3100/Weather-app-IO/edit/master/readme.md
+```  
+- Windows
+plik WeatherApp otwiera aplikacje 
+lub 
+
+```
+python ../WeatherApp/src/gui.py
+
+```
+
+- Linux 
+```
+python ../WeatherApp/src/gui.py
+
+```
+
 =======================================================================================
 <pre>
 ├ icons             #ikony używane przez aplikacje
