@@ -8,20 +8,20 @@
 
 # Uruchamianie #
 ```
-git clone https://github.com/witek3100/Weather-app-IO/edit/master/readme.md
+git clone https://github.com/witek3100/Weather-app-IO
 ```  
 - Windows
 plik WeatherApp otwiera aplikacje 
 lub 
 
 ```
-python ../WeatherApp/src/gui.py
+python ../src/gui.py
 
 ```
 
 - Linux 
 ```
-python ../WeatherApp/src/gui.py
+python ..src/gui.py
 
 ```
 
