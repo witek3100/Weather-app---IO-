@@ -6,7 +6,7 @@
 * Kaja Dzielnicka
 * Bartłomiej Stępniewski
 
-# URUCHAMIANIE #
+# Uruchamianie #
 ```
 git clone https://github.com/witek3100/Weather-app-IO/edit/master/readme.md
 ```  
