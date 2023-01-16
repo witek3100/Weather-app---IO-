@@ -10,15 +10,13 @@
 ```
 git clone https://github.com/witek3100/Weather-app-IO
 ```  
-- Windows <br /> 
-plik WeatherApp.exe oraz ../src/gui.py otwierają aplikacje <br /> 
-
-- Linux 
-```
-python ..src/gui.py
-
-```
-
+```  
+pip inistall pyqt5
+```  
+w folderze repozytorium:
+```  
+python ../src/gui.py
+```  
 
 =======================================================================================
 <pre>
