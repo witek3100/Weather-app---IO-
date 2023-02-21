@@ -35,6 +35,7 @@ class LocationApi:
 
         ### OTRZYMYWANIE ODPOWIEDŹI ###
 
+
         try:
             response = requests.post(complete_geolocation_api_url, json=request)    #wysyłanie żądania
             loc = response.json()
